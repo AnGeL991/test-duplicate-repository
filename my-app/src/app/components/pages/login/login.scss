@@ -1,0 +1,16 @@
+.login {
+  z-index: 1;
+  overflow: hidden;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+  }
+}

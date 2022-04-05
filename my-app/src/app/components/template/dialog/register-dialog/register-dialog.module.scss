@@ -1,0 +1,28 @@
+.registerForm {
+  width: 250px;
+  margin: 0 auto;
+
+  .fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+  .btn {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+.panel {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .title {
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    min-height: 30px;
+  }
+}

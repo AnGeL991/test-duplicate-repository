@@ -1,0 +1,49 @@
+.aside {
+  background-color: #ffffff;
+  width: 180px;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: fixed;
+  .logo {
+    height: 65px;
+    line-height: 65px;
+  }
+  .list {
+    padding: 0 15px;
+    .item {
+      margin: 10px 0;
+      font-weight: 900;
+      font-size: 14px;
+      height: 50px;
+      list-style-type: none;
+      cursor: pointer;
+      transition: 0.3s ease-in color, 0.3s ease-in background-color;
+      padding: 0 10px;
+      border-radius: 4px;
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: #262626;
+      }
+      &:hover {
+        color: #8c2c23;
+        background-color: rgba(#bf3326, 0.08);
+      }
+    }
+    .icon {
+      font-size: 24px;
+    }
+    .active {
+      border-radius: 0px 4px 4px 0px;
+      color: #8c2c23;
+      border-left: 4px solid #8c2c23;
+      background-color: rgba(#bf3326, 0.08);
+    }
+  }
+}

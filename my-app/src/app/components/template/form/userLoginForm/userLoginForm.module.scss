@@ -1,0 +1,15 @@
+.userLoginForm {
+  width: 250px;
+  margin: 0 auto;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  .btn {
+    width: 100%;
+  }
+}

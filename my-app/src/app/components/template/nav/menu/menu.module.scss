@@ -1,0 +1,23 @@
+.navMenu {
+  margin: 10px 0;
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-weight: 900;
+  }
+  .item {
+    font-size: 12px;
+    padding: 10px 15px 10px;
+    cursor: pointer;
+    transition: 0.3s color linear;
+    &:hover {
+      color: #8c2c23;
+    }
+  }
+  .active {
+    color: #8c2c23;
+    border-bottom: 2px solid #8c2c23;
+  }
+}

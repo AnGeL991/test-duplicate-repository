@@ -1,0 +1,54 @@
+.account {
+  position: relative;
+  padding: 10px;
+  transition: 0.3s ease-in all;
+  cursor: pointer;
+  .icon {
+    transition: 0.3s ease-in all;
+    font-size: 20px;
+    &:hover {
+      color: #8c2c23;
+    }
+  }
+
+  .dropDown {
+    box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    width: 100px;
+    height: 0;
+    top: 40px;
+    left: -65px;
+    position: absolute;
+    background-color: #ffffff;
+    transition: 0.3s linear all;
+    overflow: hidden;
+    .list {
+      list-style-type: none;
+      padding: 8px 0;
+    }
+    .item {
+      margin: 0px 5px;
+      padding-left: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 40px;
+      border-radius: 4px;
+      font-size: 14px;
+      a {
+        width: 100%;
+        line-height: 40px;
+        color: #262626;
+        text-decoration: none;
+      }
+      &:hover {
+        color: #8c2c23;
+        background-color: rgba(#8c2c23, 0.12);
+      }
+    }
+  }
+  .active {
+    height: auto;
+    visibility: visible;
+  }
+}

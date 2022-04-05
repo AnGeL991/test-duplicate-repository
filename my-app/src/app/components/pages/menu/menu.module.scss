@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .container {
+    padding: 0;
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

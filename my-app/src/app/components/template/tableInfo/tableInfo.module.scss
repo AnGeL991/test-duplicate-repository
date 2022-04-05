@@ -1,0 +1,12 @@
+.tableInfo {
+  display: flex;
+  padding-left: 8px;
+  justify-content: center;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  span {
+    margin-left: 10px;
+    color: #8c2c23;
+  }
+}

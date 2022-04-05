@@ -1,0 +1,15 @@
+.topBar {
+  background-color: #ffffff;
+  margin-left: 183px;
+  padding: 0 16px;
+  width: calc(100% - 183px);
+  height: 60px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .actionIcon {
+    display: flex;
+    gap: 5px;
+  }
+}

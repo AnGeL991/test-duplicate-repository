@@ -1,0 +1,14 @@
+.mainLayout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 100vh;
+
+  .container {
+    padding: 20px 24px;
+    margin-left: 180px;
+    margin-top: 65px;
+    width: 100%;
+  }
+}
