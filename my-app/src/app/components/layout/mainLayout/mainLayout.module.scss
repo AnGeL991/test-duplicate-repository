@@ -1,14 +1,12 @@
 .mainLayout {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow: hidden;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 0px;
 
   .container {
+    grid-area: 2 / 2 / 3 / 3;
     padding: 20px 24px;
-    margin-left: 180px;
-    margin-top: 65px;
-    width: 100%;
   }
 }

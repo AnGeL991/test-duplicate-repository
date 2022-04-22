@@ -22,12 +22,19 @@ import { client } from 'app/api';
 import styles from './login-dialog.module.scss';
 
 export const userLoginSchema = [
-  { type: 'text', name: 'login', placeholder: 'login', label: 'Login' },
+  {
+    type: 'text',
+    name: 'login',
+    placeholder: 'login',
+    label: 'Login',
+    id: 'login',
+  },
   {
     type: 'password',
     name: 'password',
     placeholder: 'password',
     label: 'Password',
+    id: 'loginPassword',
   },
 ];
 

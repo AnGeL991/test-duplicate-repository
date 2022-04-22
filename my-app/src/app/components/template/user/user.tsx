@@ -58,18 +58,25 @@ export const User: FC = () => {
           </ul>
         </div>
       </div>
-      <Dialog
-        {...{ open: openDialog === AccountAction.Login, handleCloseDialog }}
-      >
-        <LoginDialog />
-      </Dialog>
-      <Dialog
-        {...{ open: openDialog === AccountAction.Register, handleCloseDialog }}
-      >
-        <RegisterDialog
-          handleChangeForm={() => handleOpenDialog(AccountAction.Login)}
-        />
-      </Dialog>
+      {openDialog === AccountAction.Login && (
+        <Dialog
+          {...{ open: openDialog === AccountAction.Login, handleCloseDialog }}
+        >
+          <LoginDialog />
+        </Dialog>
+      )}
+      {openDialog === AccountAction.Register && (
+        <Dialog
+          {...{
+            open: openDialog === AccountAction.Register,
+            handleCloseDialog,
+          }}
+        >
+          <RegisterDialog
+            handleChangeForm={() => handleOpenDialog(AccountAction.Login)}
+          />
+        </Dialog>
+      )}
     </>
   );
 };
