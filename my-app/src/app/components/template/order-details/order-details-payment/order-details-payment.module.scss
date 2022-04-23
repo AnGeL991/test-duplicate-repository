@@ -1,0 +1,29 @@
+.orderDetailsPayment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+
+  .title {
+    color: #262626;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .totalPrice {
+    color: #8c2c23;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .boxBtn {
+    display: flex;
+    gap: 24px;
+    z-index: 100;
+    .btn {
+      min-width: 200px;
+      font-weight: 700;
+    }
+  }
+}

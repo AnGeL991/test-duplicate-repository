@@ -4,3 +4,6 @@ export * from './field/field';
 export * from './social-media-field/social-media-field';
 export * from './notifications/notifications';
 export * from './loading/loading';
+export * from './order-details';
+export * from './form-component';
+export * from './payment-dish-detail';

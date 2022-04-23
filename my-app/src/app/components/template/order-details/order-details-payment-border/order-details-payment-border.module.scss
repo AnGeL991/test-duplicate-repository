@@ -1,0 +1,19 @@
+.border_right {
+  position: absolute;
+  border-top: 2px solid #8c2c23;
+  border-left: 2px solid #8c2c23;
+  top: 0;
+  bottom: 23%;
+  right: 51%;
+  left: 0;
+}
+
+.border_left {
+  position: absolute;
+  border-top: 2px solid #8c2c23;
+  border-right: 2px solid #8c2c23;
+  top: 0px;
+  bottom: 23%;
+  right: 0;
+  left: 51%;
+}

@@ -13,6 +13,7 @@ export enum BakingType {
   rare = 'rare',
   wellDone = 'well-done',
 }
+
 export enum DishTypes {
   steaksChops = 'steaksChops',
   soup = 'Soupe',
@@ -27,6 +28,8 @@ export enum DishTypes {
   bourborn = 'bourborn',
 }
 
+export type StatusType = 'in Prepare' | 'done' | 'delivered';
+
 export enum ErrorMessageType {
   UploadMessage = '',
 }
@@ -35,12 +38,14 @@ export interface DishType {
   id: string;
   name: string;
   price: number;
+  image: string;
   ingredients: string[];
   type: DishTypes;
   baking?: BakingType;
   size?: SizeType;
   description?: string;
   amount: number;
+  status: StatusType;
 }
 
 export interface InventoryState {

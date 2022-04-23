@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import InventoryReducer from './inventory/reducer';
+import PaymentReducer from './payment/reducer';
 import AuthReducer from './auth/reducer';
 import NotificationsReducer from './notifications/reducer';
+import OrderReducer from './order/reducer';
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -13,5 +15,7 @@ export const store = configureStore({
     inventory: InventoryReducer,
     auth: AuthReducer,
     notifications: NotificationsReducer,
+    orders: OrderReducer,
+    payment: PaymentReducer,
   },
 });

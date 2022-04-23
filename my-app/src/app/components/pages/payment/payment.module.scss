@@ -1,0 +1,28 @@
+.paymentDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .dishBox {
+    padding: 12px 0;
+    width: calc(70% - 12px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .totalPayment {
+    padding: 12px 0;
+
+    width: 30%;
+  }
+  .border {
+    width: 100%;
+
+    border-top: 5px dashed #8c2c23;
+  }
+  .paymentBox {
+    padding: 12px 0;
+    width: 100%;
+  }
+}

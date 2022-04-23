@@ -1,0 +1,87 @@
+.orderDetailsDish {
+  border: 1px solid #8c2c23;
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  gap: 24px;
+  background-color: #ffffff;
+  max-height: 200px;
+  width: calc(50% - 12px);
+  overflow: hidden;
+  position: relative;
+  .imageBox {
+    .image {
+      height: 100%;
+      max-height: 200px;
+      border-radius: 8px;
+    }
+  }
+  .infoBox {
+    max-width: 350px;
+    padding: 8px 0px 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    .ingredients {
+      text-transform: capitalize;
+      font-weight: 400;
+      overflow: hidden;
+      height: 100px;
+      font-size: 12px;
+      overflow-y: scroll;
+    }
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      gap: 8px;
+    }
+    .amount {
+      width: 100%;
+      text-transform: capitalize;
+      font-weight: 300;
+      font-size: 14px;
+    }
+    .price {
+      color: #8c2c23;
+      display: flex;
+      gap: 5px;
+    }
+    .status {
+      display: flex;
+      gap: 5px;
+      text-transform: capitalize;
+      font-weight: 400;
+      color: #262626;
+    }
+    .statusText {
+      font-weight: 700;
+    }
+    .done {
+      color: green;
+    }
+  }
+}
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: #8c2c23;
+}
+.tooltip {
+  font-size: 14px;
+  padding: 6px 12px;
+  font-weight: 300;
+  max-width: 300px;
+  font-style: normal;
+}
