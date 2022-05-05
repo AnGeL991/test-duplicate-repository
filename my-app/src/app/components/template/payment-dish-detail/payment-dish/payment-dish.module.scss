@@ -9,19 +9,20 @@
   height: 155px;
   overflow: hidden;
   border-radius: 4px;
-
+  max-width: 430px;
   .imageBox {
-    width: 60%;
+    width: 50%;
     .image {
       height: 100%;
       border-radius: 8px;
     }
   }
   .infoBox {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    padding-right: 5px;
     .priceBox {
       display: flex;
       flex-wrap: wrap;

@@ -1,6 +1,7 @@
 .paymentDishList {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
-  padding: 12px 0 24px;
-  height: 250px;
+  max-height: 345px;
+  overflow-y: scroll;
 }

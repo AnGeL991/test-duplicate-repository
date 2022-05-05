@@ -5,10 +5,10 @@
   display: flex;
   padding: 16px;
   justify-content: center;
-  gap: 24px;
+  gap: 18px;
   background-color: #ffffff;
   max-height: 200px;
-  width: calc(50% - 12px);
+  width: calc(100% / 3 - 16px);
   overflow: hidden;
   position: relative;
   .imageBox {
@@ -26,6 +26,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 8px;
+    font-size: 14px;
     .title {
       font-weight: 500;
       font-size: 20px;

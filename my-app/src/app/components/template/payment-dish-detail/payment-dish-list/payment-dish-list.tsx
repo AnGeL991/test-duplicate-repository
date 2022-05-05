@@ -1,17 +1,21 @@
 import { FC } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { PaymentDish } from 'app/components/template';
+import { RootState } from 'app/store/store';
 
 import styles from './payment-dish-list.module.scss';
 
 interface PaymentDishListProps {
-  dish?: any[];
+  dishes: any[];
 }
 
-export const PaymentDishList: FC<PaymentDishListProps> = ({ dish }) => {
+export const PaymentDishList: FC<PaymentDishListProps> = ({ dishes }) => {
   return (
     <div className={styles.paymentDishList}>
-      <PaymentDish />
-      <PaymentDish />
+      {dishes?.map((dish) => (
+        <PaymentDish {...dish} />
+      ))}
     </div>
   );
 };

@@ -2,7 +2,19 @@ import { FC } from 'react';
 
 import styles from './payment-dish.module.scss';
 
-export const PaymentDish: FC = () => {
+interface PaymentDishType {
+  image: string;
+  title: string;
+  price: string;
+  amount: string;
+}
+
+export const PaymentDish: FC<PaymentDishType> = ({
+  image,
+  title,
+  price,
+  amount,
+}) => {
   return (
     <div className={styles.paymentDish}>
       <div className={styles.imageBox}>

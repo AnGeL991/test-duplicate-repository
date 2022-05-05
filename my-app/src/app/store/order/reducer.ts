@@ -22,20 +22,98 @@ export const initialState: OrderState = {
       image:
         'https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
       ingredients: ['mięso', 'test', 'awokado'],
-      type: DishTypes.steaksChops,
+      type: 'steaksChops',
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
       amount: 1,
       status: 'done',
     },
     {
-      id: '1',
+      id: '2',
       name: 'Steak&chips',
       price: 59.95,
       image:
         'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
       ingredients: ['mięso', 'test', 'awokado'],
-      type: DishTypes.steaksChops,
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '3',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '4',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '5',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '6',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '7',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
+      description:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
+      amount: 2,
+      status: 'in Prepare',
+    },
+    {
+      id: '8',
+      name: 'Steak&chips',
+      price: 59.95,
+      image:
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      ingredients: ['mięso', 'test', 'awokado'],
+      type: 'steaksChops',
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
       amount: 2,

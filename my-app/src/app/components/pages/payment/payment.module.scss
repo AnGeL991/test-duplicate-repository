@@ -2,19 +2,36 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-
+  justify-content: space-between;
   .dishBox {
     padding: 12px 0;
-    width: calc(70% - 12px);
+    width: calc(100% - 262px);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 80px;
+    padding: 24px 0;
   }
 
   .totalPayment {
-    padding: 12px 0;
-
-    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+    span {
+      color: #26262680;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    strong {
+      color: #262626;
+      font-size: 16px;
+      font-weight: 700;
+    }
   }
   .border {
     width: 100%;
@@ -25,4 +42,42 @@
     padding: 12px 0;
     width: 100%;
   }
+}
+
+.totalPaymentWrapper {
+  display: flex;
+  justify-content: flex-end;
+  .totalPaymentValue {
+    font-size: 16px;
+    font-weight: 500;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    color: #262626;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+.paymentMethods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  .btn {
+    width: 250px;
+  }
+}
+
+.tipsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

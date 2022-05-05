@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import { MdMenuBook } from 'react-icons/md';
 import { GrNotes } from 'react-icons/gr';
-import { BiCommentDetail } from 'react-icons/bi';
 import { SiContactlesspayment } from 'react-icons/si';
 import { FaUserTie } from 'react-icons/fa';
 
@@ -13,7 +12,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 const MainNav = [
   { Icon: MdMenuBook, name: 'Menu', path: '/menu' },
   { Icon: GrNotes, name: 'Order', path: '/order' },
-  { Icon: BiCommentDetail, name: 'Review', path: '/review' },
   { Icon: SiContactlesspayment, name: 'Payment', path: '/payment' },
   { Icon: FaUserTie, name: 'Call waiter', path: '/waiter' },
 ];

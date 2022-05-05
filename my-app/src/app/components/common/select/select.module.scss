@@ -1,0 +1,49 @@
+.selectForm {
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  color: #262626;
+  border: 1px solid #c7c7c7;
+  outline: none;
+  transition: 0.3s linear all;
+  &:active,
+  &:focus {
+    border: 1px solid #8c2c23;
+  }
+  span {
+    height: 40px;
+    transition: 0.3s linear all;
+    &:hover,
+    &:active {
+      color: #8c2c23;
+      background-color: rgba(191, 51, 38, 0.08);
+    }
+  }
+}
+.formControl {
+  width: 250px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  label {
+    color: #8c2c23 !important;
+    background-color: #ffffff;
+    padding: 0 5px;
+    &:active,
+    &:focus {
+      color: #8c2c23 !important;
+    }
+  }
+
+  fieldset {
+    border: none !important;
+  }
+}
+.menuItem {
+  text-transform: capitalize;
+}
+:global(.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root) {
+  transform: translate(14px, 9px) scale(1) !important;
+}

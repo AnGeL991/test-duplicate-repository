@@ -14,19 +14,18 @@ export enum BakingType {
   wellDone = 'well-done',
 }
 
-export enum DishTypes {
-  steaksChops = 'steaksChops',
-  soup = 'Soupe',
-  starters = 'Starters',
-  sides = 'Sides',
-  onIce = 'OnIce',
-  mains = 'mains',
-  salads = 'salads',
-  desserts = 'desserts',
-  whiteWines = 'whiteWines',
-  redWines = 'redWines',
-  bourborn = 'bourborn',
-}
+export type DishTypes =
+  | 'steaksChops'
+  | 'Soupe'
+  | 'Starters'
+  | 'Sides'
+  | 'OnIce'
+  | 'mains'
+  | 'salads'
+  | 'desserts'
+  | 'whiteWines'
+  | 'redWines'
+  | 'bourborn';
 
 export type StatusType = 'in Prepare' | 'done' | 'delivered';
 

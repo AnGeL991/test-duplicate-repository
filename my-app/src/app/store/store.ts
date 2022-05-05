@@ -5,6 +5,7 @@ import PaymentReducer from './payment/reducer';
 import AuthReducer from './auth/reducer';
 import NotificationsReducer from './notifications/reducer';
 import OrderReducer from './order/reducer';
+import PanelReducer from './panel/reducer';
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -17,5 +18,6 @@ export const store = configureStore({
     notifications: NotificationsReducer,
     orders: OrderReducer,
     payment: PaymentReducer,
+    panel: PanelReducer,
   },
 });
