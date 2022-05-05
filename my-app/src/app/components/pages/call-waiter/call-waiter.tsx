@@ -5,7 +5,7 @@ import { Container } from 'app/components/layout';
 
 import styles from './call-waiter.module.scss';
 
-export const CallWaiter: FC = () => {
+const CallWaiter: FC = () => {
   return (
     <section className={styles.callWaiter}>
       <Container className={styles.callWaiterCantainer}>
@@ -30,3 +30,4 @@ export const CallWaiter: FC = () => {
     </section>
   );
 };
+export default CallWaiter;

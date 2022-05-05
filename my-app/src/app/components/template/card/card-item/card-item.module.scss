@@ -1,0 +1,47 @@
+.cardItem {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #fafafa;
+  border: 2px solid #f1f3f4;
+  border-radius: 8px;
+  gap: 8px;
+  margin: 8px 0;
+  .image {
+    border-radius: 8px;
+    height: 70px;
+  }
+  .title {
+    font-weight: 700;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 70px;
+  }
+  .info {
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .amount {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .status {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    &.done {
+      strong {
+        color: green;
+      }
+    }
+  }
+}

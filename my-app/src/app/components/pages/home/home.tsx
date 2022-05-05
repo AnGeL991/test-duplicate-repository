@@ -6,7 +6,7 @@ import { Panel } from '../../template/panel/panel';
 import { useSelector, useDispatch } from 'react-redux';
 //import { userLoading, logOut, setToken } from '../../../store/auth/reducer';
 
-export const Home: FC = () => {
+const Home: FC = () => {
   const { loading, token } = useSelector((state: RootState) => state.auth);
   // const dispatch = useDispatch();
   return (
@@ -26,3 +26,5 @@ export const Home: FC = () => {
     </div>
   );
 };
+
+export default Home;

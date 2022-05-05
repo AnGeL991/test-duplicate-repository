@@ -1,0 +1,10 @@
+.notificationBtn {
+  position: relative;
+  .icon {
+    color: #262626;
+    transition: 0.3s linear all;
+    &:hover {
+      color: #8c2c23;
+    }
+  }
+}

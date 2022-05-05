@@ -8,6 +8,7 @@ export interface UpgradeType {
 
 export interface OrderState {
   orders: DishType[] | [];
+  ordersCount: number;
   totalPayment: number;
   loading: boolean;
   error: any;
@@ -120,6 +121,7 @@ export const initialState: OrderState = {
       status: 'in Prepare',
     },
   ],
+  ordersCount: 0,
   totalPayment: 0,
   loading: false,
   error: null,
@@ -169,6 +171,9 @@ export const OrderSlice = createSlice({
         return acc + curr.amount * curr.price;
       }, 0);
     },
+    setOrdersCount: (state) => {
+      state.ordersCount = state.orders.length;
+    },
   },
 });
 
@@ -180,6 +185,7 @@ export const {
   removeDish,
   addDish,
   countTotalPayment,
+  setOrdersCount
 } = OrderSlice.actions;
 
 export default OrderSlice.reducer;

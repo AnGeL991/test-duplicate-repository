@@ -12,7 +12,7 @@ import { addDiscount, addTip, preparePayment } from 'app/store/payment/reducer';
 
 import styles from './payment.module.scss';
 
-export const PaymentPage: FC = () => {
+const PaymentPage: FC = () => {
   const {
     orders: { orders },
     payment: { dishes, totalPayment, tip, discount },
@@ -91,3 +91,4 @@ export const PaymentPage: FC = () => {
     </Container>
   );
 };
+export default PaymentPage;

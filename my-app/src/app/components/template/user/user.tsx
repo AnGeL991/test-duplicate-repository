@@ -6,27 +6,13 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'app/store/auth/reducer';
 import { RootState } from 'app/store/store';
-import { Dialog, LoginDialog, RegisterDialog } from 'app/components/template';
-
-enum AccountAction {
-  Register = 'register',
-  Login = 'Login',
-}
+import { LoginDialog, RegisterDialog } from 'app/components/template';
 
 export const User: FC = () => {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
-  const [openDialog, setOpenDialog] = useState<AccountAction | null>(null);
-
-  const handleOpenDialog = (dialog: AccountAction) => {
-    setOpenDialog(dialog);
-  };
-
-  const handleCloseDialog = () => {
-    setOpenDialog(null);
-  };
 
   return (
     <>
@@ -35,17 +21,11 @@ export const User: FC = () => {
         <div className={classNames(styles.dropDown, { [styles.active]: open })}>
           <ul className={styles.list}>
             {!isAuthenticated && (
-              <li
-                className={styles.item}
-                onClick={() => handleOpenDialog(AccountAction.Login)}
-              >
+              <li className={styles.item}>
                 <span>Sign in</span>
               </li>
             )}
-            <li
-              className={styles.item}
-              onClick={() => handleOpenDialog(AccountAction.Register)}
-            >
+            <li className={styles.item}>
               <span>Sign up</span>
             </li>
             {isAuthenticated && (
@@ -58,25 +38,8 @@ export const User: FC = () => {
           </ul>
         </div>
       </div>
-      {openDialog === AccountAction.Login && (
-        <Dialog
-          {...{ open: openDialog === AccountAction.Login, handleCloseDialog }}
-        >
-          <LoginDialog />
-        </Dialog>
-      )}
-      {openDialog === AccountAction.Register && (
-        <Dialog
-          {...{
-            open: openDialog === AccountAction.Register,
-            handleCloseDialog,
-          }}
-        >
-          <RegisterDialog
-            handleChangeForm={() => handleOpenDialog(AccountAction.Login)}
-          />
-        </Dialog>
-      )}
+      <LoginDialog />
+      <RegisterDialog />
     </>
   );
 };

@@ -60,7 +60,7 @@ const dishes: DishProps[] = [
   },
 ];
 
-export const Menu: FC = () => {
+const Menu: FC = () => {
   const [active, setActive] = useState('starters');
   const displayMenu = dishes.map((dish, index) => {
     if (dish.type === active) {
@@ -80,3 +80,4 @@ export const Menu: FC = () => {
     </div>
   );
 };
+export default Menu;

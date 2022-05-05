@@ -14,7 +14,7 @@ export const PaymentDishList: FC<PaymentDishListProps> = ({ dishes }) => {
   return (
     <div className={styles.paymentDishList}>
       {dishes?.map((dish) => (
-        <PaymentDish {...dish} />
+        <PaymentDish key={dish.id} {...dish} />
       ))}
     </div>
   );

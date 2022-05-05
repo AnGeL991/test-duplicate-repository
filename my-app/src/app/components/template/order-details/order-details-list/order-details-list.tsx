@@ -10,7 +10,7 @@ export const OrderDetailsList: FC = () => {
   return (
     <div className={styles.orderDetailsList}>
       {orders.map((dish) => (
-        <OrderDetailsDish {...dish} />
+        <OrderDetailsDish key={dish.id} {...dish} />
       ))}
     </div>
   );

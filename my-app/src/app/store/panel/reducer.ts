@@ -10,10 +10,10 @@ interface PanelState {
 }
 
 export const initialState: PanelState = {
-  open: true,
-  loading: true,
+  open: false,
+  loading: false,
   massage: 'loading...',
-  status: 'error',
+  status: 'success',
 };
 
 export const PanelSlice = createSlice({

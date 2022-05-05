@@ -11,58 +11,49 @@ import {
   Toolbar,
 } from '@mui/material';
 
-import MailIcon from '@mui/icons-material/Mail';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { Dialog, LoginDialog, RegisterDialog } from 'app/components/template';
+import {
+  LoginDialog,
+  RegisterDialog,
+  NotificationsButton,
+  CardButton,
+} from 'app/components/template';
 import { RootState } from 'app/store/store';
 import { logOut } from 'app/store/auth/reducer';
+import { openLoginDialog, openRegisterDialog } from 'app/store/dialog/reducer';
 import styles from './topbar.module.scss';
 
-enum AccountAction {
-  Register = 'register',
-  Login = 'Login',
-}
+export type MenuOptions = 'profile' | 'notifications' | 'basket' | '';
 
 export const TopBar: FC = () => {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
-
-  const [openDialog, setOpenDialog] = useState<AccountAction | null>(null);
-
-  const handleOpenDialog = (dialog: AccountAction) => {
-    setOpenDialog(dialog);
-  };
-
-  const handleCloseDialog = () => {
-    setOpenDialog(null);
-  };
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    if (openMenu === event.currentTarget.id) {
+      return setOpenMenu(null);
+    }
+    setOpenMenu(event.currentTarget.id);
+    setAnchorEl(event.currentTarget);
+  };
+
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleOpenForm = (form: AccountAction) => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-    handleOpenDialog(form);
-  };
-
-  const handleMenuClose = (form: AccountAction) => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
+  const handleMenuClose = () => {
+    setOpenMenu(null);
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -71,54 +62,51 @@ export const TopBar: FC = () => {
 
   const handleLogOut = () => {
     dispatch(logOut);
-    setAnchorEl(null);
-    handleMobileMenuClose();
+    setOpenMenu(null);
   };
 
-  const menuId = 'primary-search-account-menu';
+  const handleOpenLoginDialog = () => {
+    setOpenMenu(null);
+
+    dispatch(openLoginDialog());
+  };
+
+  const handleOpenRegisterDialog = () => {
+    setOpenMenu(null);
+    dispatch(openRegisterDialog());
+  };
 
   const userLogged = isAuthenticated ? (
-    <>
+    <div>
+      <MenuItem className={styles.menuItem}>Profile</MenuItem>
       <MenuItem className={styles.menuItem} onClick={handleLogOut}>
-        Profile
-      </MenuItem>
-      <MenuItem
-        className={styles.menuItem}
-        onClick={() => handleOpenForm(AccountAction.Register)}
-      >
         Log out
       </MenuItem>
-    </>
+    </div>
   ) : (
-    <>
-      <MenuItem
-        className={styles.menuItem}
-        onClick={() => handleOpenForm(AccountAction.Login)}
-      >
+    <div>
+      <MenuItem className={styles.menuItem} onClick={handleOpenLoginDialog}>
         Sign in
       </MenuItem>
-      <MenuItem
-        className={styles.menuItem}
-        onClick={() => handleOpenForm(AccountAction.Register)}
-      >
+      <MenuItem className={styles.menuItem} onClick={handleOpenRegisterDialog}>
         Sign up
       </MenuItem>
-    </>
+    </div>
   );
-  const renderMenu = (
+
+  const profileMenu = (
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
         horizontal: 'right',
       }}
-      id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
         horizontal: 'right',
       }}
-      open={isMenuOpen}
+      open={openMenu === 'profile'}
       onClose={handleMenuClose}
       className={styles.menu}
     >
@@ -126,7 +114,6 @@ export const TopBar: FC = () => {
     </Menu>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -134,7 +121,6 @@ export const TopBar: FC = () => {
         vertical: 'top',
         horizontal: 'right',
       }}
-      id={mobileMenuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
@@ -146,7 +132,7 @@ export const TopBar: FC = () => {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <ShoppingBasketIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -163,7 +149,7 @@ export const TopBar: FC = () => {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem onClick={handleMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -184,32 +170,21 @@ export const TopBar: FC = () => {
         <Toolbar>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-              className={styles.icon}
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon className={styles.icon} />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon className={styles.icon} />
-              </Badge>
-            </IconButton>
+            <CardButton
+              openMenu={openMenu === 'basket'}
+              handleMenuOpen={handleMenuOpen}
+            />
+            <NotificationsButton
+              openMenu={openMenu === 'notifications'}
+              handleMenuOpen={handleMenuOpen}
+            />
             <IconButton
               size="large"
               edge="end"
+              id="profile"
               aria-label="account of current user"
-              aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              onClick={handleMenuOpen}
               color="inherit"
               className={styles.icon}
             >
@@ -220,7 +195,6 @@ export const TopBar: FC = () => {
             <IconButton
               size="large"
               aria-label="show more"
-              aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
@@ -231,27 +205,10 @@ export const TopBar: FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
+      <LoginDialog />
+      <RegisterDialog />
       {renderMobileMenu}
-      {renderMenu}
-      {openDialog === AccountAction.Login && (
-        <Dialog
-          {...{ open: openDialog === AccountAction.Login, handleCloseDialog }}
-        >
-          <LoginDialog />
-        </Dialog>
-      )}
-      {openDialog === AccountAction.Register && (
-        <Dialog
-          {...{
-            open: openDialog === AccountAction.Register,
-            handleCloseDialog,
-          }}
-        >
-          <RegisterDialog
-            handleChangeForm={() => handleOpenDialog(AccountAction.Login)}
-          />
-        </Dialog>
-      )}
+      {profileMenu}
     </>
   );
 };
