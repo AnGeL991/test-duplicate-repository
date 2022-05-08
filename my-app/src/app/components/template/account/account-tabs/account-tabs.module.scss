@@ -1,0 +1,10 @@
+.tabs {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .container {
+    width: auto;
+  }
+}

@@ -1,0 +1,36 @@
+.form {
+  max-width: 1024px;
+  .fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    border: none;
+    padding: 4px 8px;
+    .field {
+      width: calc(50% - 12px);
+    }
+    label {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .date {
+      width: 25%;
+    }
+  }
+}
+.buttons {
+  padding: 16px 8px 0px;
+  max-width: 1024px;
+
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  .btn {
+    width: 100px;
+    text-transform: capitalize;
+  }
+}
+
+:global(.MuiOutlinedInput-root) {
+  height: 56px;
+}

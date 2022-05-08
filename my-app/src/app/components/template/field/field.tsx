@@ -1,8 +1,11 @@
-import classNames from 'classnames';
-import { FC } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
-
-import styles from './field.module.scss';
+import { FC } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
+import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import InputBase from "@mui/material/InputBase";
+import classNames from "classnames";
+import styles from "./field.module.scss";
 
 interface FieldProps {
   type: string;
@@ -13,6 +16,8 @@ interface FieldProps {
   label?: string;
   className?: string;
   error?: { message: string; type: string };
+  required?: boolean;
+  disabled?: boolean;
 }
 
 export const Field: FC<FieldProps> = ({
@@ -22,8 +27,9 @@ export const Field: FC<FieldProps> = ({
   register,
   label,
   id,
-  className = '',
+  className = "",
   error,
+  required,
 }) => {
   return (
     <div className={classNames(styles.field, { [className]: className })}>

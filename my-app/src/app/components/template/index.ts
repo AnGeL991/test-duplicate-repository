@@ -9,3 +9,4 @@ export * from './form-component';
 export * from './payment-dish-detail';
 export * from './payment-method';
 export * from './card';
+export * from './account';

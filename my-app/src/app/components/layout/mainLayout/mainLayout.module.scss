@@ -8,5 +8,7 @@
   .container {
     grid-area: 2 / 2 / 3 / 3;
     padding: 20px 24px;
+    max-height: calc(100vh - 60px);
+    overflow-y: scroll;
   }
 }

@@ -1,5 +1,5 @@
-import { FC, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { FC, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   Badge,
@@ -9,24 +9,24 @@ import {
   MenuItem,
   AppBar,
   Toolbar,
-} from '@mui/material';
+} from "@mui/material";
 
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import MoreIcon from "@mui/icons-material/MoreVert";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 import {
   LoginDialog,
   RegisterDialog,
   NotificationsButton,
   CardButton,
-} from 'app/components/template';
-import { RootState } from 'app/store/store';
-import { logOut } from 'app/store/auth/reducer';
-import { openLoginDialog, openRegisterDialog } from 'app/store/dialog/reducer';
-import styles from './topbar.module.scss';
+} from "app/components/template";
+import { RootState } from "app/store/store";
+import { logOut } from "app/store/auth/reducer";
+import { openLoginDialog, openRegisterDialog } from "app/store/dialog/reducer";
+import styles from "./topbar.module.scss";
 
-export type MenuOptions = 'profile' | 'notifications' | 'basket' | '';
+export type MenuOptions = "profile" | "notifications" | "basket" | "";
 
 export const TopBar: FC = () => {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
@@ -98,15 +98,15 @@ export const TopBar: FC = () => {
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
       keepMounted
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
-      open={openMenu === 'profile'}
+      open={openMenu === "profile"}
       onClose={handleMenuClose}
       className={styles.menu}
     >
@@ -118,13 +118,13 @@ export const TopBar: FC = () => {
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
       keepMounted
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
@@ -169,13 +169,13 @@ export const TopBar: FC = () => {
       <AppBar position="sticky" className={styles.appBar}>
         <Toolbar>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <CardButton
-              openMenu={openMenu === 'basket'}
+              openMenu={openMenu === "basket"}
               handleMenuOpen={handleMenuOpen}
             />
             <NotificationsButton
-              openMenu={openMenu === 'notifications'}
+              openMenu={openMenu === "notifications"}
               handleMenuOpen={handleMenuOpen}
             />
             <IconButton
@@ -191,7 +191,7 @@ export const TopBar: FC = () => {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="show more"

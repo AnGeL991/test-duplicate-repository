@@ -16,12 +16,20 @@
       color: #bf3326;
     }
   }
+
   .label {
     font-weight: 300;
     font-size: 14px;
+    padding-bottom: 3px;
   }
   .error {
     font-size: 12px;
     color: red;
   }
+  .input:focus ~ label {
+    color: #bf3326;
+  }
+}
+:global(.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root) {
+  height: 40px !important;
 }
