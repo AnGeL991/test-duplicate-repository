@@ -1,0 +1,47 @@
+.placedOrder {
+  width: 290px;
+  border-radius: 8px;
+  background-color: #343434;
+  border: 2px solid #4c2e31;
+  padding: 10px 7px;
+  display: flex;
+  gap: 15px;
+  cursor: auto;
+  .imageBox {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    img {
+      height: 80px;
+      border-radius: 8px;
+    }
+  }
+  .infoBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+    .title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .price,
+    .amount,
+    .status {
+      font-size: 12px;
+      display: flex;
+      text-transform: capitalize;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

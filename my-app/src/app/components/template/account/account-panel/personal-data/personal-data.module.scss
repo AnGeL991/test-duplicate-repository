@@ -3,11 +3,31 @@
   .fieldset {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 24px;
     border: none;
     padding: 4px 8px;
     .field {
-      width: calc(50% - 12px);
+      width: 48%;
+      height: 80px;
+      display: block;
+      color: #cdcdce;
+      label {
+        color: #c89825;
+      }
+      input {
+        border: 1px solid #98741e;
+        background-color: #060708;
+        margin-top: 8px;
+        height: 50px;
+        font-size: 14px;
+        color: #cdcdce;
+        width: 100%;
+        &::placeholder {
+          color: #cdcdce;
+          font-weight: 900;
+        }
+      }
     }
     label {
       font-weight: 500;
@@ -15,12 +35,27 @@
     }
     .date {
       width: 25%;
+      label {
+        color: #c89825;
+      }
+      input {
+        border: 1px solid #98741e;
+        background-color: #060708;
+        height: 50px;
+        font-size: 20px;
+        color: #cdcdce;
+        width: 100%;
+        &::placeholder {
+          color: #cdcdce;
+          font-weight: 900;
+        }
+      }
     }
   }
 }
 .buttons {
   padding: 16px 8px 0px;
-  max-width: 1024px;
+  max-width: 1000px;
 
   display: flex;
   gap: 12px;

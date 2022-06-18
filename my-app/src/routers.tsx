@@ -1,15 +1,18 @@
-import {FC, Suspense, lazy} from "react";
+import { FC, Suspense, lazy } from "react";
 
-import {Route, Routes} from "react-router";
+import { Route, Routes } from "react-router";
 
-import {CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
 
 const Home = lazy(() => import("app/components/pages/home/home"));
 const Menu = lazy(() => import("app/components/pages/menu/menu"));
 const OrderPage = lazy(() => import("app/components/pages/order/order"));
 const PaymentPage = lazy(() => import("app/components/pages/payment/payment"));
-const CallWaiter = lazy(() => import("app/components/pages/call-waiter/call-waiter"));
+const CallWaiter = lazy(
+  () => import("app/components/pages/call-waiter/call-waiter")
+);
 const Account = lazy(() => import("app/components/pages/account/account"));
+const Contact = lazy(() => import("app/components/pages/contact/contact"));
 
 export const Routers: FC = () => {
   return (
@@ -22,6 +25,7 @@ export const Routers: FC = () => {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/waiter" element={<CallWaiter />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Suspense>
   );

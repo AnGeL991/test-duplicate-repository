@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000/api';
+const API_URL = "http://localhost:8000/api";
 
 export async function client(
   endpoint: RequestInfo,
@@ -7,13 +7,13 @@ export async function client(
   options?: RequestInit
 ) {
   const { ...customConfig } = options ?? {};
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = { "Content-Type": "application/json" };
   const config: RequestInit = {
-    method: data ? 'POST' : 'GET',
+    method: data ? "POST" : "GET",
     body: data ? JSON.stringify(data) : undefined,
     headers: {
       ...headers,
-      Authorization: AuthToken ? `Bearer ${AuthToken}` : '',
+      Authorization: AuthToken ? `Bearer ${AuthToken}` : "",
       ...customConfig.headers,
     },
     ...customConfig,

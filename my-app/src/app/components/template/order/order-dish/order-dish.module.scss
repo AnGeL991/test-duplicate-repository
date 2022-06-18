@@ -1,0 +1,69 @@
+.orderDish {
+  width: 290px;
+
+  border-radius: 8px;
+  background-color: #343434;
+  border: 2px solid #4c2e31;
+  padding: 10px 7px;
+  display: flex;
+  gap: 15px;
+  cursor: auto;
+  .imageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 80px;
+      border-radius: 8px;
+    }
+  }
+  .infoBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+    .amount {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 12px;
+
+      display: flex;
+      text-transform: capitalize;
+      justify-content: space-between;
+    }
+    .amountCount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .icon {
+      color: #921a26;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        transition: var(--transition);
+      }
+    }
+    .increment,
+    .dicrement {
+      cursor: pointer;
+      font-size: 16px;
+      &:hover {
+        transition: var(--transition);
+        color: #921a26;
+      }
+    }
+  }
+}

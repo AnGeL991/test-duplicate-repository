@@ -1,30 +1,32 @@
 .field {
-  color: #262626;
+  color: var(--textColor);
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 100%;
   .input {
     height: 40px;
-    border: 0.5px solid #592722;
+    color: #592722;
+    border: 0.5px solid var(--inputBorderColor);
     border-radius: 4px;
     outline: none;
     padding: 0 10px;
     &:focus {
-      border: 1px solid #bf3326;
-      box-shadow: 0 0 5px 0 rgba(#bf3326, 0.5);
-      color: #bf3326;
+      box-shadow: 0 0 5px 0 rgba(var(--inputFocusColor), 0.5);
+      border: 1px solid var(--inputFocusColor);
+      color: var(--inputFocusColor);
     }
   }
 
   .label {
-    font-weight: 300;
+    font-weight: 500;
     font-size: 14px;
     padding-bottom: 3px;
+    text-transform: capitalize;
   }
   .error {
     font-size: 12px;
-    color: red;
+    color: var(--redColor);
   }
   .input:focus ~ label {
     color: #bf3326;

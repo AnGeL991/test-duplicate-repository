@@ -3,8 +3,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-
+  .tab {
+    color: #fff;
+  }
+  :global(.css-1aquho2-MuiTabs-indicator) {
+    background-color: #c89825;
+  }
+  :global(.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected) {
+    color: #fff;
+  }
+  :global(.css-1h9z7r5-MuiButtonBase-root-MuiTab-root) {
+    color: #fff;
+  }
   .container {
     width: auto;
+  }
+  .account {
+    max-width: 1024px;
   }
 }

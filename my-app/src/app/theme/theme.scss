@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+  --transition: 0.2s linear color, 0.2s linear background-color;
+  background-color: #000000;
+  --textColor: #ffffff;
+  --yellowColor: #cd9e2b;
+  --redColor: #f50920;
+  --backgroundColor: #0c0e10;
+
+  /* Navigation */
+  --navTextColor: #ffffff;
+  --navBackgroundColor: #0c0e10;
+  --navLineColor: #ae1726;
+  --navHoverColor: #28292a;
+
+  /* TopBar*/
+  --topBarBackgroundColor: #000000;
+
+  /*pop up*/
+  --popupLineColor: #691e25;
+
+  /* modal*/
+  --modalBgcColor: #0c0e10;
+
+  /*input*/
+  --inputBorderColor: #592722;
+  --inputFocusColor: #d94151;
+}

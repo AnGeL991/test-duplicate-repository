@@ -1,5 +1,5 @@
 .paymentMethod {
-  background-color: #f1f3f4;
+  background-color: #9a9b9b;
   height: 120px;
   border-radius: 4px;
   width: 380px;
@@ -11,8 +11,9 @@
   border: 2px solid #f1f3f4;
   transition: 0.3s linear border;
   cursor: pointer;
+
   &:hover {
-    border: 2px solid #8c2c23;
+    border: 2px solid #fabe2f;
   }
   .paymentType {
     height: 40px;
@@ -31,7 +32,7 @@
     display: flex;
     justify-content: space-between;
   }
-  .active {
-    border: 2px solid #8c2c23;
-  }
+}
+.active {
+  border: 2px solid #fabe2f;
 }

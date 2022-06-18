@@ -1,0 +1,51 @@
+.content {
+  width: 490px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  top: 30%;
+  position: absolute;
+  padding: 15px;
+  .title {
+    text-transform: uppercase;
+  }
+  .openHours {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .personalData {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: right;
+  }
+  .yellow {
+    color: #c99826;
+  }
+}
+.contactData {
+  margin-top: 50px;
+  margin-left: 20px;
+  position: relative;
+  width: 490px;
+
+  .bgc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(#000, 0.5);
+    box-shadow: 30px 25px 110px 0px #00000040 inset,
+      140px -25px 110px 0px #00000080 inset,
+      -140px -63px 110px 0px #00000099 inset;
+  }
+}

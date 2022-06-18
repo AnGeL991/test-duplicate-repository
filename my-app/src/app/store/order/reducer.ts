@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DishType, DishTypes } from '../inventory';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { DishType } from "../inventory";
 
 export interface UpgradeType {
   amount: number;
@@ -8,6 +8,7 @@ export interface UpgradeType {
 
 export interface OrderState {
   orders: DishType[] | [];
+  placedOrders: DishType[] | [];
   ordersCount: number;
   totalPayment: number;
   loading: boolean;
@@ -15,112 +16,8 @@ export interface OrderState {
 }
 
 export const initialState: OrderState = {
-  orders: [
-    {
-      id: '1',
-      name: 'Steak&chips',
-      price: 39.95,
-      image:
-        'https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 1,
-      status: 'done',
-    },
-    {
-      id: '2',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '3',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '4',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '5',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '6',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '7',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-    {
-      id: '8',
-      name: 'Steak&chips',
-      price: 59.95,
-      image:
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3RlYWt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-      ingredients: ['mięso', 'test', 'awokado'],
-      type: 'steaksChops',
-      description:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiasreiciendis perferendis ut nostrum ipsam quae consectetur, recusandaeillum, natus aut optio! Placeat quaerat at alias est eveniet cumqueinventore vero.',
-      amount: 2,
-      status: 'in Prepare',
-    },
-  ],
+  orders: [],
+  placedOrders: [],
   ordersCount: 0,
   totalPayment: 0,
   loading: false,
@@ -128,26 +25,36 @@ export const initialState: OrderState = {
 };
 
 export const OrderSlice = createSlice({
-  name: 'order',
+  name: "order",
   initialState,
   reducers: {
     orderLoading: (state) => {
       state.loading = true;
     },
-    orderData: (state, action: PayloadAction<any>) => {
-      const { data } = action.payload;
-    },
     addDish: (state, action: PayloadAction<DishType>) => {
-      state.orders = [...state.orders, action.payload];
+      const exist = state.orders.find(
+        (order) => order.id === action.payload.id
+      );
+      if (exist) {
+        state.orders = state.orders.map((order) => {
+          if (order.id === action.payload.id) {
+            order.amount += 1;
+            return order;
+          }
+          return order;
+        });
+      } else {
+        state.orders = [...state.orders, action.payload];
+      }
     },
-    removeDish: (state, action: PayloadAction<DishType['id']>) => {
+    removeDish: (state, action: PayloadAction<DishType["id"]>) => {
       const orders = state.orders.filter(({ id }) => id !== action.payload);
       state.orders = orders;
     },
     incrementAmount: (state, action: PayloadAction<UpgradeType>) => {
       const currentOrders = state.orders.map((dish) => {
         if (dish.id === action.payload.id) {
-          dish.amount += action.payload.amount;
+          dish.amount += 1;
           return dish;
         }
         return dish;
@@ -156,20 +63,33 @@ export const OrderSlice = createSlice({
     },
     decrementAmount: (state, action: PayloadAction<UpgradeType>) => {
       const currentOrders = state.orders.map((dish) => {
-        if (dish.id === action.payload.id) {
-          dish.amount -= action.payload.amount;
+        if (dish.id === action.payload.id && dish.amount > 1) {
+          dish.amount -= 1;
           return dish;
         }
         return dish;
       });
       state.orders = currentOrders;
     },
+    setPlacedOrder: (state) => {
+      state.placedOrders = [...state.placedOrders, ...state.orders];
+      state.orders = [];
+      const palcedOrders = state.placedOrders as DishType[];
+      state.totalPayment = palcedOrders.reduce(
+        (acc: number, curr: DishType) => {
+          return acc + curr.amount * curr.price;
+        },
+        0
+      );
+    },
     countTotalPayment: (state) => {
-      const orders = state.orders as DishType[];
-
-      state.totalPayment = orders.reduce((acc: number, curr: DishType) => {
-        return acc + curr.amount * curr.price;
-      }, 0);
+      const palcedOrders = state.placedOrders as DishType[];
+      state.totalPayment = palcedOrders.reduce(
+        (acc: number, curr: DishType) => {
+          return acc + curr.amount * curr.price;
+        },
+        0
+      );
     },
     setOrdersCount: (state) => {
       state.ordersCount = state.orders.length;
@@ -179,13 +99,13 @@ export const OrderSlice = createSlice({
 
 export const {
   orderLoading,
-  orderData,
   decrementAmount,
   incrementAmount,
   removeDish,
   addDish,
   countTotalPayment,
-  setOrdersCount
+  setOrdersCount,
+  setPlacedOrder,
 } = OrderSlice.actions;
 
 export default OrderSlice.reducer;

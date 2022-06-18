@@ -1,0 +1,207 @@
+{
+  "menu": [
+    {
+      "id": "1",
+      "name": "TOP LOIN",
+      "price": 89,
+      "ingredients": [
+        "300g polędwicy wołowej",
+        "puree ziemniaczane",
+        "sałatka z papryczka piquillo"
+      ],
+      "image": "https://www.bowrivermeatmarket.ca/wp-content/uploads/2019/06/Sirloin-Steak.png",
+      "type": "steak"
+    },
+    {
+      "id": "2",
+      "name": "RIB–EYE",
+      "price": 99,
+      "ingredients": [
+        "300g polędwicy wołowej",
+        "puree ziemniaczane",
+        "sałatka z papryczka piquillo"
+      ],
+      "image": "https://www.artisangourmetmeats.com/wp-content/uploads/2020/11/rib-eye-steak-beef-artisan-gourmet-meats.jpg",
+      "type": "steak"
+    },
+    {
+      "id": "3",
+      "name": "RIB–EYE",
+      "price": 39,
+      "ingredients": [
+        "100g polędwicy wołowej",
+        "puree ziemniaczane",
+        "sałatka z papryczka piquillo"
+      ],
+      "image": "https://i.pinimg.com/736x/a8/06/b5/a806b5e34f86871750590125bae54dc2.jpg",
+      "type": "steak"
+    },
+    {
+      "id": "4",
+      "name": "CHICKEN WINGS (10 PCS)",
+      "price": 36,
+      "ingredients": [
+        "peanut butter",
+        "sos louisiana",
+        "salsa chimichurri- jalapeño"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCjRhjjPJwZqUj0d2S-mYxY8dzaUbPvhcwKq2659xNWd50dU7s9skSsY7ZBTaCa9lDl_A&usqp=CAU",
+      "type": "starters"
+    },
+    {
+      "id": "5",
+      "name": "RAW BEEF",
+      "price": 49,
+      "ingredients": [
+        "suszone żółtko",
+        "szalotka",
+        "kiszony ogórek",
+        "oliwa pietruszkowa",
+        "gorczyca",
+        "majonez lubczykowy",
+        "chrupka z pietruszk",
+        "pieczywo"
+      ],
+      "image": "https://staticsmaker.iplsc.com/smaker_prod_2021_03_24/5e1b2b79389dcf4369d1eb6926dc59e8-article_content.jpg",
+      "type": "starters"
+    },
+    {
+      "id": "6",
+      "name": "TIGER PRAWNS (7 PCS)",
+      "price": 49,
+      "ingredients": [
+        "imbirowa marchewka",
+        "pomarańcza",
+        "ponzu",
+        "pomidor",
+        "wino",
+        "masło",
+        "majonez miso",
+        "pieczywo"
+      ],
+      "image": "https://www.london-unattached.com/wp-content/uploads/2018/04/Thai-marinated-prawns-Low-Calorie-Diet-Barbecue-Dishes.jpg",
+      "type": "starters"
+    },
+    {
+      "id": "7",
+      "name": "A BOARD OF DRIED MEAT AND SAUSAGES",
+      "price": 82,
+      "ingredients": [
+        "kiełbasa chorizo",
+        "suszona polędwica wołowa",
+        "szynka parmeńsk",
+        "podsuszany rostbef rasy Hereford",
+        "oliwki ",
+        "konfitura morelowa z rumem"
+      ],
+      "image": "https://www.i-lovelife.pl/wp-content/uploads/2021/08/wloskie-szynki-1024x780.jpg",
+      "type": "starters"
+    },
+    {
+      "id": "8",
+      "name": "BEEF BROTH",
+      "price": 39,
+      "ingredients": [
+        "pierożki z borowikam",
+        "grzyby mun",
+        "kapusta pak cho",
+        "szczypiorek",
+        "oliwa truflowa",
+        "marynowany czosnek"
+      ],
+      "image": "https://pl.rc-cdn.community.thermomix.com/recipeimage/83cxp0ps-9d7d5-479086-f60be-4mmeaivi/226b0a16-9529-40b1-95d2-45131a7510b2/main/bulion-do-ramenu.jpg",
+      "type": "soup"
+    },
+    {
+      "id": "9",
+      "name": "SEASONAL BEEF SOUP",
+      "price": 39,
+      "ingredients": [
+        "pomidory",
+        "imbir",
+        "chili",
+        "kolendra",
+        "kumin",
+        "nachosy",
+        "śmietana"
+      ],
+      "image": "https://1.bp.blogspot.com/-BPpZW8UQrc8/XyB1UArTGXI/AAAAAAAAP9w/eHQtBIzC22kyb51BqFIKZMIXGgD9KfuAACLcBGAsYHQ/s1600/bulion_wolowy_azjatycki19.jpg",
+      "type": "soup"
+    },
+    {
+      "id": "10",
+      "name": "CHICKEN BREAST SALAD",
+      "price": 39,
+      "ingredients": [
+        "sałata rzymska",
+        "bekon",
+        "pomidorki cherry",
+        "chrupiące grzanki",
+        "parmezan",
+        "sos aioli"
+      ],
+      "image": "https://www.licious.in/blog/wp-content/uploads/2020/12/3-Step-Chicken-Salad-600x600.jpg",
+      "type": "salad"
+    },
+    {
+      "id": "11",
+      "name": "RUCOLA WITH TATAKA TENDERLOIN",
+      "price": 49,
+      "ingredients": [
+        "wędzone tofu",
+        "marynowane grzybki shimeji",
+        "śliwki",
+        "sos winegreat",
+        "sezam"
+      ],
+      "image": "https://images.food52.com/rv4YHco4AA_7V3Uz4DXXwgrij6Q=/1930x1286/filters:format(webp)/da5ece4d-06f6-4ffc-9b38-8199ebe4b28f--Steak_and_Arugula.jpeg",
+      "type": "salad"
+    },
+    {
+      "id": "12",
+      "name": "GNOCCHI WITH MASCARPONE AND NUTS",
+      "price": 42,
+      "ingredients": [
+        "sos winno-maślany",
+        "orzechy włoskie",
+        "chili",
+        "limonka",
+        "parmezan",
+        "rukola"
+      ],
+      "image": "https://filozofiasmaku.pl/wp-content/uploads/2013/06/buraczane-gnocchi-3.jpg",
+      "type": "pasta"
+    },
+    {
+      "id": "13",
+      "name": "SPAGHETTI BOLOGNESE",
+      "price": 49,
+      "ingredients": [
+        "polędwica wołowa",
+        "pomidory pelatti",
+        "warzywa korzeniowe",
+        "pesto bazyliowe z orzechami ziemnymi",
+        "parmezan"
+      ],
+      "image": "https://szefpoleca.pl/wp-content/uploads/2021/10/najprostsze-spaghetti-bolognese-01-900x575.webp",
+      "type": "pasta"
+    },
+    {
+      "id": "14",
+      "name": "TAGLIATELLE ROSSO WITH PRAWNS",
+      "price": 52,
+      "ingredients": [
+        "szpinak",
+        "szalotka",
+        "czosnek",
+        "chili",
+        "trawa cytrynowa",
+        "pomidory pelatti",
+        "sos śmietanowy",
+        "krewetki"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7LuVzRsUjZevKHi8X9ffenrlY8C6j4tP_0gG_6S--ef3hC5680UAYcH7cHaoQ-aJOdOI&usqp=CAU",
+      "type": "pasta"
+    }
+  ]
+}

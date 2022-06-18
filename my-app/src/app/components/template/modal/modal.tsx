@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import ReactDom from 'react-dom';
-import classNames from 'classnames';
-import { GrFormClose } from 'react-icons/gr';
+import { FC } from "react";
+import ReactDom from "react-dom";
+import classNames from "classnames";
+import { AiOutlineClose } from "react-icons/ai";
 
-import styles from './modal.module.scss';
+import styles from "./modal.module.scss";
 
 interface DialogProps {
   open: boolean;
@@ -27,10 +27,14 @@ export const Dialog: FC<DialogProps> = ({
             <span className={styles.label}>{label}</span>
           </header>
         )}
-        <GrFormClose className={styles.icon} onClick={handleCloseDialog} />
+        <AiOutlineClose
+          className={styles.icon}
+          color="#94111F"
+          onClick={handleCloseDialog}
+        />
         <div className={styles.body}>{children}</div>
       </div>
     </div>,
-    document.getElementById('root') as HTMLElement
+    document.getElementById("root") as HTMLElement
   );
 };

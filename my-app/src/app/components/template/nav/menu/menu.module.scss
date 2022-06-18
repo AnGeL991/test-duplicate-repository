@@ -12,12 +12,13 @@
     padding: 10px 15px 10px;
     cursor: pointer;
     transition: 0.3s color linear;
+    color: #fff;
     &:hover {
-      color: #8c2c23;
+      color: #ae1726;
     }
   }
   .active {
-    color: #8c2c23;
-    border-bottom: 2px solid #8c2c23;
+    color: #fff;
+    border-bottom: 2px solid #ae1726;
   }
 }

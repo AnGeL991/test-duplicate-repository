@@ -1,0 +1,33 @@
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 7px;
+  padding: 0;
+  width: 100%;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #ffffff;
+  min-width: 320px;
+  .info {
+    text-align: center;
+  }
+  .btn {
+    background-color: #94111f;
+    max-width: 320px;
+    width: 100%;
+  }
+  .join {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #bf3326;
+    font-weight: 900;
+    transition: var(--transition);
+    &:hover {
+      border-bottom: 2px solid #bf3326;
+    }
+  }
+}

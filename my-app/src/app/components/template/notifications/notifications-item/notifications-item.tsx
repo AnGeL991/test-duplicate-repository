@@ -1,20 +1,20 @@
-import { FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { FC } from "react";
+import { useDispatch } from "react-redux";
 
 import {
   setReadedNotification,
   setUnReadCount,
-} from 'app/store/notifications/reducer';
+} from "app/store/notifications/reducer";
 
-import { Badge } from '@mui/material';
-import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import InfoIcon from '@mui/icons-material/Info';
+import { Badge } from "@mui/material";
+import ErrorIcon from "@mui/icons-material/Error";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import InfoIcon from "@mui/icons-material/Info";
 
-import classNames from 'classnames';
-import styles from './notifications-item.module.scss';
+import classNames from "classnames";
+import styles from "./notifications-item.module.scss";
 
-type Status = 'error' | 'info' | 'success';
+type Status = "error" | "info" | "success";
 
 interface NotificationsItemProps {
   id: string;
@@ -40,10 +40,10 @@ export const NotificationsItem: FC<NotificationsItemProps> = ({
 
   const displayIcon = () => {
     switch (status) {
-      case 'error': {
+      case "error": {
         return <ErrorIcon />;
       }
-      case 'success': {
+      case "success": {
         return <CheckCircleOutlineIcon />;
       }
       default: {
@@ -57,9 +57,6 @@ export const NotificationsItem: FC<NotificationsItemProps> = ({
       className={classNames(styles.item, styles[status])}
       onClick={handleReadNotification}
     >
-      {!readed && (
-        <Badge variant="dot" color={status} className={styles.badge} />
-      )}
       <span className={classNames(styles.icon, styles[status])}>
         {displayIcon()}
       </span>

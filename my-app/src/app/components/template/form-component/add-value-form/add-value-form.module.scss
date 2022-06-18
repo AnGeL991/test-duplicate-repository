@@ -3,12 +3,14 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
+  color: #fff;
   .text {
     width: 180px;
     font-weight: 900;
   }
   .input {
     height: 30px;
+    border: 2px solid #bbbbbc;
   }
   .btn {
     width: 180px;

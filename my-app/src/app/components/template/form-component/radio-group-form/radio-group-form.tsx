@@ -29,7 +29,7 @@ export const RadioGroupForm: FC<RadioGroupFormProps> = ({
 }) => {
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">{label}</FormLabel>
+      <FormLabel className={styles.label} id="demo-radio-buttons-group-label">{label}</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue={defaultValue}
@@ -38,7 +38,7 @@ export const RadioGroupForm: FC<RadioGroupFormProps> = ({
         row={row}
       >
         {values.map(({ value, label }) => (
-          <FormControlLabel value={value} control={<Radio />} label={label} />
+          <FormControlLabel  value={value} control={<Radio />} label={label} />
         ))}
       </RadioGroup>
     </FormControl>

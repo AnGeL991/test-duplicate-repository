@@ -21,17 +21,19 @@ export const AccountTabs: FC<AccountTabsProps> = ({ value, handleChange }) => {
   return (
     <section className={styles.tabs}>
       <AccountUser />
-      <Container>
+      <Container className={styles.account}>
         <Tabs value={value} onChange={handleChange} aria-label="Account tabs">
-          <Tab label="Personal Data" />
+          <Tab label="Personal Data" className={styles.tab} />
           <Tab label="Your Orders" />
+          <Tab label="Your Reviews" />
           <Tab label="Change Password" />
         </Tabs>
       </Container>
-      <Container>
+      <Container className={styles.account}>
         <PersonalData {...{ id: "1", hidden: value !== 0 }} />
         <Orders {...{ id: "2", hidden: value !== 1 }} />
-        <ChangePassword {...{ id: "3", hidden: value !== 2 }} />
+
+        <ChangePassword {...{ id: "4", hidden: value !== 3 }} />
       </Container>
     </section>
   );

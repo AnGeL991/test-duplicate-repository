@@ -1,93 +1,56 @@
-.actionLoadingContainer {
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s linear all;
-  z-index: 2200;
-  .loadingBox {
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
-    width: 220px;
-    height: 220px;
-  }
-  .wrapper {
-    position: relative;
-  }
-  .circularProgress {
-    position: absolute;
-    top: calc(50% - 33px);
-    left: calc(50% - 33px);
-    color: #bf3326;
-  }
-  .message {
-    text-align: center;
-    color: #262626;
-    font-size: 14px;
-    font-weight: 500;
-    padding-top: 30px;
-  }
-
-  .success {
-    color: green;
-  }
-  .error {
-    color: red;
-  }
-  .fab {
-    box-shadow: none;
-    color: #ffffff;
-    background-color: #ffffff;
-    transition: 0.3s linear all;
-
-    &.error {
-      background-color: red;
-      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-        0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-      &:hover {
-        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-          0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-          0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-        background-color: rgb(255, 0, 0);
-      }
-    }
-
-    &.success {
-      background-color: green;
-      &:hover {
-        background-color: green;
-      }
-    }
-  }
-}
-.loading {
-  display: flex;
-  opacity: 1;
-  visibility: visible;
-}
-.cancelBox {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+  z-index: 999999;
+  background-color: rgba($color: #000000, $alpha: 0.9);
   transition: 0.3s linear all;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.12);
-    background-color: rgba(0, 0, 0, 0.12);
+  color: #fff;
+  transition: var(--transition);
+  .black {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 10px 5px 5px 2px #0c0e10 inset;
+    border-radius: 50%;
   }
-  .closeIcon {
-    color: #262626;
+  .red {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: -10px 5px 12px 2px #d21a1a inset;
+    border-radius: 50%;
+  }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  .red {
+    animation: animate 4s infinite;
+  }
+  .black {
+    animation: animate 4s infinite;
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

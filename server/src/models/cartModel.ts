@@ -24,7 +24,7 @@ CartSchema.statics.createNewFromRequestBody = async function (props, id) {
 CartSchema.statics.getLength = async function () {
   try {
     return await this.countDocuments();
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err.message);
   }
 };
@@ -32,7 +32,7 @@ CartSchema.statics.getLength = async function () {
 CartSchema.statics.confirmPayment = async function (id) {
   try {
     return await this.findOneAndUpdate({ id }, { paymentStatus: { paid: true } });
-  } catch (err) {
+  } catch (err: any) {
     throw Error(err.message);
   }
 };

@@ -24,7 +24,7 @@ export const PersonalData: FC<PersonalDataProps> = ({ id, hidden }) => {
     watch,
   } = useForm();
 
-  const buttons = editMode ? (
+  const buttons = !editMode ? (
     <Button className={styles.btn} onClick={handleChangeEditMode}>
       edit
     </Button>

@@ -1,14 +1,13 @@
 .basket {
   position: relative;
-  padding: 10px;
   transition: 0.3s ease-in all;
-  
+  cursor: pointer;
   .icon {
     cursor: pointer;
     transition: 0.3s ease-in all;
     font-size: 20px;
     &:hover {
-      color: #8c2c23;
+      color: var(--yellowColor);
     }
   }
 }

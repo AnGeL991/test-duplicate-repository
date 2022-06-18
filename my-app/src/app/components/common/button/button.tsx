@@ -1,11 +1,11 @@
-import classNames from 'classnames';
-import { FC } from 'react';
-import styles from './button.module.scss';
+import classNames from "classnames";
+import { FC } from "react";
+import styles from "./button.module.scss";
 
 export enum ButtonTypes {
-  reset = 'reset',
-  submit = 'submit',
-  button = 'button',
+  reset = "reset",
+  submit = "submit",
+  button = "button",
 }
 
 interface ButtonType {
@@ -20,7 +20,7 @@ export const Button: FC<ButtonType> = ({
   onClick,
   text,
   children,
-  className = '',
+  className = "",
 }) => {
   return (
     <button

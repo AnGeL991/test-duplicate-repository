@@ -5,3 +5,9 @@
   max-height: 345px;
   overflow-y: scroll;
 }
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}

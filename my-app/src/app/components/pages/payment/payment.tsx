@@ -1,26 +1,26 @@
-import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, PageHeader } from 'app/components/common';
-import { Container } from 'app/components/layout';
+import { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, PageHeader } from "app/components/common";
+import { Container } from "app/components/layout";
 import {
   AddValueFormat,
   PaymentDishList,
   PaymentMethod,
-} from 'app/components/template';
-import { RootState } from 'app/store/store';
-import { addDiscount, addTip, preparePayment } from 'app/store/payment/reducer';
-
-import styles from './payment.module.scss';
+} from "app/components/template";
+import { RootState } from "app/store/store";
+import { addDiscount, addTip, preparePayment } from "app/store/payment/reducer";
+import masterCard from "assets/images/mastercard.svg";
+import styles from "./payment.module.scss";
 
 const PaymentPage: FC = () => {
   const {
-    orders: { orders },
-    payment: { dishes, totalPayment, tip, discount },
+    orders: { placedOrders },
+    payment: { dishes, totalPayment, tip, discount, paymentMethod },
   } = useSelector((state: RootState) => state);
 
   const dispatch = useDispatch();
 
-  dispatch(preparePayment(orders));
+  dispatch(preparePayment(placedOrders));
 
   return (
     <Container>
@@ -61,7 +61,7 @@ const PaymentPage: FC = () => {
         <div className={styles.paymentBox}>
           <div className={styles.totalPaymentWrapper}>
             <div className={styles.totalPaymentValue}>
-              <span>Total Payment</span>{' '}
+              <span>Total Payment</span>{" "}
               <strong>${(totalPayment + tip + discount).toFixed(2)}</strong>
             </div>
           </div>
@@ -70,17 +70,20 @@ const PaymentPage: FC = () => {
               type="CreaditCard"
               cardNumber="xxxx xxxx xxxx 21321"
               expiryDate="09/25"
-              image="https://pngset.com/images/mc-history-timeline-logo-mastercard-svg-symbol-trademark-text-graphics-transparent-png-2742410.png"
+              image={masterCard}
+              active={paymentMethod === "CreaditCard"}
             />
             <PaymentMethod
               type="PayU"
               email="adrianmarkuszewski@wp.pl"
               image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/PayU.svg/1280px-PayU.svg.png"
+              active={paymentMethod === "PayU"}
             />
             <PaymentMethod
               type="Paypal"
               email="adrianmarkuszewski@wp.pl"
               image="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+              active={paymentMethod === "Paypal"}
             />
           </div>
         </div>

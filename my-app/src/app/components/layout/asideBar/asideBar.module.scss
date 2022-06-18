@@ -1,5 +1,5 @@
 .aside {
-  background-color: #ffffff;
+  background-color: var(--backgroundColor);
   width: 180px;
   height: 100vh;
   overflow: hidden;
@@ -11,6 +11,8 @@
     line-height: 65px;
   }
   .list {
+    margin-top: 20px;
+    border-top: 0.5px solid var(--redColor);
     .item {
       margin: 10px 0;
       font-weight: 900;
@@ -28,20 +30,18 @@
         height: 100%;
         width: 100%;
         text-decoration: none;
-        color: #262626;
+        color: var(--textColor);
       }
       &:hover {
-        color: #8c2c23;
-        background-color: rgba(#bf3326, 0.08);
+        background-color: var(--navHoverColor);
       }
     }
     .icon {
       font-size: 24px;
     }
     .active {
-      color: #8c2c23;
-      border-left: 4px solid #8c2c23;
-      background-color: rgba(#bf3326, 0.08);
+      border-left: 4px solid var(--navLineColor);
+      background-color: var(--navHoverColor);
     }
   }
 }

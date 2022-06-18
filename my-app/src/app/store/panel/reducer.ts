@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Status = 'success' | 'error' | 'pending';
+type Status = "success" | "error" | "pending";
 
 interface PanelState {
   open: boolean;
@@ -12,17 +12,14 @@ interface PanelState {
 export const initialState: PanelState = {
   open: false,
   loading: false,
-  massage: 'loading...',
-  status: 'success',
+  massage: "loading...",
+  status: "success",
 };
 
 export const PanelSlice = createSlice({
-  name: 'panel',
+  name: "panel",
   initialState,
   reducers: {
-    setLoading: (state, action: PayloadAction<boolean>) => {
-      state.loading = action.payload;
-    },
     setStatus: (state, action: PayloadAction<Status>) => {
       state.status = action.payload;
     },
@@ -32,10 +29,16 @@ export const PanelSlice = createSlice({
     toggleModal: (state, action: PayloadAction<boolean>) => {
       state.open = action.payload;
     },
+    setLoading: (state) => {
+      state.loading = true;
+    },
+    closeLoading: (state) => {
+      state.loading = false;
+    },
   },
 });
 
-export const { setLoading, setStatus, setMessage, toggleModal } =
+export const { setLoading, closeLoading, setStatus, setMessage, toggleModal } =
   PanelSlice.actions;
 
 export default PanelSlice.reducer;

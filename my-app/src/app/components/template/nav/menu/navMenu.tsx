@@ -1,15 +1,14 @@
-import classNames from 'classnames';
-import { Dispatch, FC, SetStateAction } from 'react';
+import classNames from "classnames";
+import { Dispatch, FC, SetStateAction } from "react";
 
-import styles from './menu.module.scss';
+import styles from "./menu.module.scss";
 
 const NavMenuSchema = [
-  { name: 'Starters', value: 'starters' },
-  { name: 'STEAKS&CHOPS', value: 'steak' },
-  { name: 'MARKET POTATOES', value: 'potatoes' },
-  { name: 'SALAD', value: 'salad' },
-  { name: 'SIDES', value: 'sides' },
-  { name: 'DRINKS', value: 'drinks' },
+  { name: "Starters", value: "starters" },
+  { name: "STEAKS&CHOPS", value: "steak" },
+  { name: "SOUP", value: "soup" },
+  { name: "PASTA", value: "pasta" },
+  { name: "SALAD", value: "salad" },
 ];
 
 interface NavMenuProps {

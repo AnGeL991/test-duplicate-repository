@@ -18,17 +18,18 @@
     flex-direction: column;
     width: 250px;
     gap: 20px;
+    color: #fff;
     div {
       display: flex;
       justify-content: space-between;
     }
     span {
-      color: #26262680;
+      color: #c89825;
       font-size: 14px;
       font-weight: 500;
     }
     strong {
-      color: #262626;
+      color: #fff;
       font-size: 16px;
       font-weight: 700;
     }
@@ -36,7 +37,7 @@
   .border {
     width: 100%;
 
-    border-top: 5px dashed #8c2c23;
+    border-top: 5px dashed #94111f;
   }
   .paymentBox {
     padding: 12px 0;
@@ -54,8 +55,12 @@
     display: flex;
     justify-content: space-between;
     color: #262626;
+    span {
+      color: #c89825;
+    }
     strong {
       font-weight: 700;
+      color: #fff;
     }
   }
 }

@@ -1,0 +1,19 @@
+.list {
+  list-style-type: none;
+  .item {
+    cursor: pointer;
+    width: 100px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 16px;
+    transform: var(--transition);
+    &:nth-child(odd) {
+      border-bottom: 1px solid #44272a;
+    }
+    &:hover {
+      background-color: #343434;
+    }
+  }
+}

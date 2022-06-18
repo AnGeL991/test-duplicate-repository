@@ -1,20 +1,32 @@
-import { FC, useState } from 'react';
-import { BiDish } from 'react-icons/bi';
-import { Order } from '../order/order';
+import { FC } from "react";
+import OrderIcon from "assets/images/purchase-order.svg";
+import { Order } from "../order/order/order";
 
-import styles from './basket.module.scss';
+import styles from "./basket.module.scss";
 
-interface BasketTyp {}
+interface BasketTyp {
+  active: boolean;
+  setActive: (option: string) => void;
+}
 
-export const Basket: FC<BasketTyp> = () => {
-  const [open, setOpen] = useState(false);
+export const Basket: FC<BasketTyp> = ({ active, setActive }) => {
+  const handleOpenBasket = () => {
+    if (!active) {
+      return setActive("basket");
+    }
+    setActive("");
+  };
+
   return (
     <div className={styles.basket}>
-      <BiDish
+      <img
+        src={OrderIcon}
         className={styles.icon}
-        onClick={() => setOpen((prev) => !prev)}
+        alt="order icon"
+        onClick={handleOpenBasket}
       />
-      <Order {...{ open, setOpen }} />
+
+      <Order open={active} />
     </div>
   );
 };

@@ -1,4 +1,18 @@
 .radioGroup {
   display: flex;
   flex-direction: row;
+  color: #c89825;
+  :global(.css-1m9pwf3) {
+    border: 1px solid #c89825;
+  }
+  :global(.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked) {
+    color: #c89825;
+  }
+}
+.label {
+  color: #c89825;
+}
+
+:global(.css-u4tvz2-MuiFormLabel-root) {
+  color: #c89825 !important;
 }

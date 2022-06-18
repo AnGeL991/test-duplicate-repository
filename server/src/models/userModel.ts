@@ -7,8 +7,8 @@ import { ResponseProcessor } from '../utils';
 const UserSchema = new Schema<IUserDocument, IUserModel>(
   {
     email: { type: String, required: true, trim: true, unique: true },
-    firstName: { type: String },
-    lastName: { type: String },
+    name: { type: String },
+    surname: { type: String },
     password: { type: String },
     contact: { type: String },
     adress: { type: String },

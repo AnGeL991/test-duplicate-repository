@@ -1,19 +1,23 @@
-import { FC } from 'react';
+import { FC } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
-import { MdMenuBook } from 'react-icons/md';
-import { GrNotes } from 'react-icons/gr';
-import { SiContactlesspayment } from 'react-icons/si';
-import { FaUserTie } from 'react-icons/fa';
-
-import classNames from 'classnames';
-import styles from './asideBar.module.scss';
-import { NavLink, useLocation } from 'react-router-dom';
+import ContactIcon from "assets/images/contact.svg";
+import MenuIcon from "assets/images/menu-icon.svg";
+import PaymentIcon from "assets/images/payment.svg";
+import ReviewIcon from "assets/images/review.svg";
+import WaiterIcon from "assets/images/waiter.svg";
+import OrderIcon from "assets/images/order-icon.svg";
+import LogoSmall from "assets/images/logo-small.svg";
+import classNames from "classnames";
+import styles from "./asideBar.module.scss";
 
 const MainNav = [
-  { Icon: MdMenuBook, name: 'Menu', path: '/menu' },
-  { Icon: GrNotes, name: 'Order', path: '/order' },
-  { Icon: SiContactlesspayment, name: 'Payment', path: '/payment' },
-  { Icon: FaUserTie, name: 'Call waiter', path: '/waiter' },
+  { icon: MenuIcon, name: "Menu", path: "/menu" },
+  { icon: OrderIcon, name: "Order", path: "/order" },
+  { icon: ReviewIcon, name: "Review", path: "/review" },
+  { icon: PaymentIcon, name: "Payment", path: "/payment" },
+  { icon: WaiterIcon, name: "Call waiter", path: "/waiter" },
+  { icon: ContactIcon, name: "Contact", path: "/contact" },
 ];
 
 export const AsideBar: FC = () => {
@@ -22,10 +26,14 @@ export const AsideBar: FC = () => {
 
   return (
     <aside className={styles.aside}>
-      <div className={styles.logo}>Logo</div>
+      <div className={styles.logo}>
+        <NavLink to="/">
+          <img src={LogoSmall} alt="Logo" />
+        </NavLink>
+      </div>
       <nav>
         <ul className={styles.list}>
-          {MainNav.map(({ Icon, name, path }, index) => (
+          {MainNav.map(({ icon, name, path }, index) => (
             <li
               key={index}
               className={classNames(styles.item, {
@@ -33,7 +41,8 @@ export const AsideBar: FC = () => {
               })}
             >
               <NavLink to={path}>
-                <Icon className={styles.icon} /> <span>{name}</span>
+                <img src={icon} alt={name} className={styles.image} />
+                <span>{name}</span>
               </NavLink>
             </li>
           ))}

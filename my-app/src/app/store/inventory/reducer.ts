@@ -1,51 +1,32 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {
-  SizeType,
-  BakingType,
-  DishTypes,
-  ErrorMessageType,
-  DishType,
-  InventoryState,
-} from './type';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { InventoryState } from "./type";
 
 export const initialState: InventoryState = {
-  inventory: {
-    steaksChops: [],
-    starters: [],
-    soupe: [],
-    sides: [],
-    onIce: [],
-    mains: [],
-    salads: [],
-    desserts: [],
-    whiteWines: [],
-    redWines: [],
-    bourborn: [],
-  },
+  inventory: [],
   loading: false,
   error: null,
 };
 
 export const inventorySlice = createSlice({
-  name: 'inventory',
+  name: "inventory",
   initialState,
   reducers: {
     inventoryLoading: (state) => {
       state.loading = false;
     },
-    inventoryData: (state, action: PayloadAction<any>) => {
-      const { data } = action.payload;
+    setInventoryData: (state, action: PayloadAction<any>) => {
+      state.inventory = action.payload;
     },
     inventoryError: (state) => {
       state.error = {
-        error: 'Error',
-        message: 'We have trouble with uploading  data',
+        error: "Error",
+        message: "We have trouble with uploading data",
       };
     },
   },
 });
 
-export const { inventoryData, inventoryError, inventoryLoading } =
+export const { setInventoryData, inventoryError, inventoryLoading } =
   inventorySlice.actions;
 
 export default inventorySlice.reducer;

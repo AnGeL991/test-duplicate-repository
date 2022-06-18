@@ -106,16 +106,7 @@ export const Orders: FC<OrdersProps> = ({ id, hidden }) => {
 
   return (
     <AccountPanel {...{ id, hidden }}>
-      <div style={{ height: 319, width: "100%" }}>
-        <DataGrid
-          ref={gridRef}
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          disableSelectionOnClick
-        />
-      </div>
+      <div className={styles.order}>Work in progress</div>
     </AccountPanel>
   );
 };

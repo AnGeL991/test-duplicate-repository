@@ -1,0 +1,29 @@
+.popUp {
+  position: absolute;
+  border-radius: 8px;
+  background-color: var(--navHoverColor);
+  transition: var(--transition) opacity 0.3s linear;
+  top: 100%;
+  right: 10px;
+  box-shadow: 0px 1px 5px 0px rgba(#000000, 12),
+    0px 2px 2px 0px rgba(#000000, 0.14), 0px 3px 1px -2px rgba(#000000, 0.2);
+  color: var(--textColor);
+  padding: 7px 0;
+  cursor: auto;
+  opacity: 0;
+  visibility: hidden;
+  .header {
+    border-bottom: 0.5px solid var(--popupLineColor);
+    padding: 5px 0;
+    text-align: center;
+  }
+  .footer {
+    padding: 8px 8px 5px;
+    border-top: 0.5px solid var(--popupLineColor);
+  }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}

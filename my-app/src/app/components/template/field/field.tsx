@@ -16,7 +16,7 @@ interface FieldProps {
   label?: string;
   className?: string;
   error?: { message: string; type: string };
-  required?: boolean;
+  defaultValue?: string | number;
   disabled?: boolean;
 }
 
@@ -29,7 +29,7 @@ export const Field: FC<FieldProps> = ({
   id,
   className = "",
   error,
-  required,
+  defaultValue,
 }) => {
   return (
     <div className={classNames(styles.field, { [className]: className })}>
@@ -41,6 +41,7 @@ export const Field: FC<FieldProps> = ({
         id={id}
         type={type}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         {...register(name)}
       />
       {error && <span className={styles.error}>{error.message}</span>}
