@@ -6,24 +6,28 @@ const InventorySchema: Schema = new Schema({
   image: { type: String },
   description: { type: String },
   type: { type: String },
-  price: { type: String },
+  price: { type: String, required: true },
   ingredients: { type: Array }
 });
 
 InventorySchema.statics.createNewFromRequestBody = async function (props) {
   try {
     const newProduct = new this(props);
+    console.log(newProduct);
     await newProduct.save();
   } catch (err: any) {
     throw new Error(err.message);
   }
 };
+
 InventorySchema.statics.findbyProduct = async function (category) {
   return await this.find({ category });
 };
+
 InventorySchema.statics.findAllProduct = async function () {
   return await this.find();
 };
+
 InventorySchema.statics.addComment = async function (id, newComment) {
   try {
     return await this.findOneAndUpdate({ _id: id }, { $addToSet: { comment: [newComment] } });

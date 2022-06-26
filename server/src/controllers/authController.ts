@@ -68,9 +68,16 @@ export const forgetPassword = async (req: Request, res: Response) => {
     return ResponseProcessor(res).sendError({ error: err.message });
   }
 };
+
 /* User resetPassword */
 export const resetPassword = (req: Request, res: Response) => {
   const { newPassword } = req.body;
   Validate(req, res);
   return errorHandler(res, User.updateHashedPassword(res.locals.user, newPassword));
+};
+
+/* User update personal data */
+export const updateData = (req: Request, res: Response) => {
+  console.log(res.locals.user);
+  return errorHandler(res, User.updateAccount(res.locals.user._id, { ...req.body }));
 };

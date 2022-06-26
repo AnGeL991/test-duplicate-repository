@@ -30,6 +30,7 @@ export const Field: FC<FieldProps> = ({
   className = "",
   error,
   defaultValue,
+  disabled,
 }) => {
   return (
     <div className={classNames(styles.field, { [className]: className })}>
@@ -42,6 +43,7 @@ export const Field: FC<FieldProps> = ({
         type={type}
         placeholder={placeholder}
         defaultValue={defaultValue}
+        disabled={disabled}
         {...register(name)}
       />
       {error && <span className={styles.error}>{error.message}</span>}

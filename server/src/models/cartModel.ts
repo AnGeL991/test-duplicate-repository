@@ -10,8 +10,9 @@ const CartSchema: Schema = new Schema({
   },
   totalPayment: { type: Number, default: 0 },
   client: { type: String },
-  meals: []
+  meals: { type: Array }
 });
+
 CartSchema.statics.createNewFromRequestBody = async function (props, id) {
   try {
     const newOrder = new this(props);
@@ -21,6 +22,7 @@ CartSchema.statics.createNewFromRequestBody = async function (props, id) {
     throw new Error(err.message);
   }
 };
+
 CartSchema.statics.getLength = async function () {
   try {
     return await this.countDocuments();

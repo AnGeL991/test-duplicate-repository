@@ -18,14 +18,14 @@ ReviewSchema.statics.createComment = async function (props) {
     const newComment = new this(props);
     await newComment.save();
     return newComment;
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err.message);
   }
 };
 ReviewSchema.statics.getAllCommentById = async function (arrayOfId) {
   try {
     return await this.find({ _id: [...arrayOfId] });
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err.message);
   }
 };

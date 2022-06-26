@@ -10,11 +10,10 @@ const UserSchema = new Schema<IUserDocument, IUserModel>(
     name: { type: String },
     surname: { type: String },
     password: { type: String },
-    contact: { type: String },
-    adress: { type: String },
-    city: { type: String },
-    state: { type: String },
-    code: { type: String },
+    phoneNumber: { type: String },
+    gender: { type: String },
+    birth: { type: String },
+    citizenship: { type: String },
     country: { type: String }
   },
   {

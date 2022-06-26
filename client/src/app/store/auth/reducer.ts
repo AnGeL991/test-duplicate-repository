@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { UserReduxProcess } from './authLogic';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserReduxProcess } from "./authLogic";
 
 export interface AuthState {
   token: string;
@@ -13,7 +13,7 @@ export interface AuthState {
 }
 
 export const initialState: AuthState = {
-  token: '',
+  token: "",
   isAuthenticated: false,
   loading: false,
   error: {},
@@ -24,17 +24,20 @@ export const initialState: AuthState = {
 };
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     userLoading: (state, action: PayloadAction<boolean>) => {
       UserReduxProcess.userLoading(state, action);
     },
-    userLoaded: (state, action: PayloadAction<AuthState['user']>) => {
+    userLoaded: (state, action: PayloadAction<AuthState["user"]>) => {
       UserReduxProcess.userLoaded(state, action);
     },
     setToken: (state, action: PayloadAction<string>) => {
       UserReduxProcess.setToken(state, action);
+    },
+    setUser: (state) => {
+      UserReduxProcess.setUser(state);
     },
     loginRequest: (state) => {
       UserReduxProcess.loginRequest(state);
@@ -55,6 +58,7 @@ export const {
   loginRequest,
   loginSuccess,
   userLoaded,
+  setUser,
 } = authSlice.actions;
 
 export default authSlice.reducer;

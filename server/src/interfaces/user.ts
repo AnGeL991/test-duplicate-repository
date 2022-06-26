@@ -1,4 +1,4 @@
-import { Document, Model } from "mongoose";
+import { Document, Model } from 'mongoose';
 
 export interface IUser {
   email: string;
@@ -12,10 +12,12 @@ export interface IUser {
   code?: string;
   country?: string;
 }
+
 export interface IUserDocument extends IUser, Document {
   comparePassword(candidatePassword: string): boolean;
 }
 export interface IUserModel extends Model<IUserDocument> {
+  updateAccount(id: any, newPassword: any): any;
   addUser(User: IUser): Promise<void>;
   deleteUser(UserId: string): Promise<void>;
   updateHashedPassword(id: string, password: string): Promise<void>;

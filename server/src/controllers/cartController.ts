@@ -7,7 +7,7 @@ export const addCart = async (req: Request, res: Response) => {
     const cartId = await prepareOrderId();
     const cart = await Cart.createNewFromRequestBody(req.body, cartId);
     return ResponseProcessor(res).sendResult({ id: cartId, _id: cart._id });
-  } catch (err) {
+  } catch (err: any) {
     return ResponseProcessor(res).sendError({ error: err.message });
   }
 };
