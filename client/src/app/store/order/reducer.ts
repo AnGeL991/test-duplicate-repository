@@ -46,10 +46,14 @@ export const OrderSlice = createSlice({
       } else {
         state.orders = [...state.orders, action.payload];
       }
+      const secializeState = JSON.stringify(state.orders);
+      localStorage.setItem("order", secializeState);
     },
     removeDish: (state, action: PayloadAction<DishType["id"]>) => {
       const orders = state.orders.filter(({ id }) => id !== action.payload);
       state.orders = orders;
+      const secializeState = JSON.stringify(state.orders);
+      localStorage.setItem("order", secializeState);
     },
     incrementAmount: (state, action: PayloadAction<UpgradeType>) => {
       const currentOrders = state.orders.map((dish) => {
@@ -60,6 +64,8 @@ export const OrderSlice = createSlice({
         return dish;
       });
       state.orders = currentOrders;
+      const secializeState = JSON.stringify(state.orders);
+      localStorage.setItem("order", secializeState);
     },
     decrementAmount: (state, action: PayloadAction<UpgradeType>) => {
       const currentOrders = state.orders.map((dish) => {
@@ -70,6 +76,8 @@ export const OrderSlice = createSlice({
         return dish;
       });
       state.orders = currentOrders;
+      const secializeState = JSON.stringify(state.orders);
+      localStorage.setItem("order", secializeState);
     },
     setPlacedOrder: (state) => {
       state.placedOrders = [...state.placedOrders, ...state.orders];
@@ -81,6 +89,10 @@ export const OrderSlice = createSlice({
         },
         0
       );
+      const secializeStateOrder = JSON.stringify(state.orders);
+      localStorage.setItem("order", secializeStateOrder);
+      const secializeState = JSON.stringify(palcedOrders);
+      localStorage.setItem("placedOrder", secializeState);
     },
     countTotalPayment: (state) => {
       const palcedOrders = state.placedOrders as DishType[];
@@ -94,6 +106,25 @@ export const OrderSlice = createSlice({
     setOrdersCount: (state) => {
       state.ordersCount = state.orders.length;
     },
+    setOrdersFromLocalStorage: (state) => {
+      const orders = localStorage.getItem("order");
+      if (orders) {
+        state.orders = JSON.parse(orders);
+      }
+    },
+    setPlacedOrderFromLocalStorage: (state) => {
+      const placedOrder = localStorage.getItem("placedOrder");
+      if (placedOrder) {
+        state.placedOrders = JSON.parse(placedOrder);
+      }
+    },
+    setInitialState: (state) => {
+      state.orders = initialState.orders;
+      state.placedOrders = initialState.placedOrders;
+      state.totalPayment = initialState.totalPayment;
+      localStorage.removeItem("placedOrder");
+      localStorage.removeItem("order");
+    },
   },
 });
 
@@ -106,6 +137,9 @@ export const {
   countTotalPayment,
   setOrdersCount,
   setPlacedOrder,
+  setOrdersFromLocalStorage,
+  setPlacedOrderFromLocalStorage,
+  setInitialState,
 } = OrderSlice.actions;
 
 export default OrderSlice.reducer;

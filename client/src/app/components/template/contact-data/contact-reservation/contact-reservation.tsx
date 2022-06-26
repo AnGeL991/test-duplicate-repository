@@ -63,7 +63,7 @@ export const ContactReservation: FC = () => {
   const displayData = formData.map(({ type, name, placeholder }) => {
     if (type === "textarea") {
       return (
-        <div className={styles.textarea}>
+        <div key={name} className={styles.textarea}>
           <textarea placeholder="Treść wiadomości" {...register("message")} />
           {errors["message"] && (
             <p className={styles.error}>{errors["message"].message}</p>
@@ -73,6 +73,7 @@ export const ContactReservation: FC = () => {
     }
     return (
       <Field
+        key={name}
         type={type}
         name={name}
         placeholder={placeholder}

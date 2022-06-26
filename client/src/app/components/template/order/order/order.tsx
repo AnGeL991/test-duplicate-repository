@@ -20,8 +20,8 @@ export const Order: FC<OrderType> = ({ open }) => {
   );
   const footer = (
     <div className={styles.footer}>
-      <span>Total Payment</span>
-      <span>${totalPayment}</span>
+      <span>Suma</span>
+      <span>{totalPayment} zł</span>
     </div>
   );
 
@@ -33,19 +33,19 @@ export const Order: FC<OrderType> = ({ open }) => {
 
   const displayOrders = orders.map((order) => <OrderDish {...order} />);
 
-  const displayPlacedOrders = placedOrders.map((placedOrder) => (
-    <PlacedOrder {...placedOrder} status={"In Prepare"} />
+  const displayPlacedOrders = placedOrders.map((placedOrder, index) => (
+    <PlacedOrder key={index} {...placedOrder} status={"W trakcie"} />
   ));
 
   const empty = <div className={styles.empty}>Twój koszyk jest pusty</div>;
 
   return (
-    <PopUp header="Your orders" footer={footer} open={open}>
+    <PopUp header="Twoj wybór" footer={footer} open={open}>
       <div className={styles.content}>
         <div className={styles.list}>{displayOrders}</div>
         {displayOrders.length ? (
           <Button className={styles.btn} onClick={handleSumitOrder}>
-            Submit your order
+            Potwierdz twoje zamówienie
           </Button>
         ) : (
           empty
@@ -53,7 +53,7 @@ export const Order: FC<OrderType> = ({ open }) => {
       </div>
       {displayPlacedOrders.length ? (
         <div className={styles.placedOrder}>
-          <h3 className={styles.title}>Placed Order</h3>
+          <h3 className={styles.title}>Zamówione potrawy</h3>
           <div className={styles.list}>{displayPlacedOrders}</div>
         </div>
       ) : null}

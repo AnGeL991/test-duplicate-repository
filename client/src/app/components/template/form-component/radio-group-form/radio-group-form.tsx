@@ -19,6 +19,7 @@ interface RadioGroupFormProps {
   defaultValue?: string;
   row?: boolean;
   disabled?: boolean;
+  register: any;
 }
 
 export const RadioGroupForm: FC<RadioGroupFormProps> = ({
@@ -28,6 +29,7 @@ export const RadioGroupForm: FC<RadioGroupFormProps> = ({
   values = [],
   row,
   disabled,
+  register,
 }) => {
   return (
     <FormControl disabled={disabled}>
@@ -41,8 +43,14 @@ export const RadioGroupForm: FC<RadioGroupFormProps> = ({
         className={styles.radioGroup}
         row={row}
       >
-        {values.map(({ value, label }) => (
-          <FormControlLabel value={value} control={<Radio />} label={label} />
+        {values.map(({ value, label }, index) => (
+          <FormControlLabel
+            key={index}
+            value={value}
+            control={<Radio />}
+            label={label}
+            {...register("gender")}
+          />
         ))}
       </RadioGroup>
     </FormControl>

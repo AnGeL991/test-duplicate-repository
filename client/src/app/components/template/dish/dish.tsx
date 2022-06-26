@@ -53,7 +53,7 @@ export const Dish: FC<DishProps> = ({
             <span className={styles.ingredient}>{displayIngredients}</span>
           </div>
 
-          <span className={styles.price}>${price.toFixed(2)}</span>
+          <span className={styles.price}>{Number(price).toFixed(2)} zł</span>
         </div>
         <div className={styles.bar}>
           <BsInfoLg className={styles.icon} />

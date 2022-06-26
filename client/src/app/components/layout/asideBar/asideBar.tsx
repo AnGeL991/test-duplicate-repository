@@ -13,11 +13,11 @@ import styles from "./asideBar.module.scss";
 
 const MainNav = [
   { icon: MenuIcon, name: "Menu", path: "/menu" },
-  { icon: OrderIcon, name: "Order", path: "/order" },
-  { icon: ReviewIcon, name: "Review", path: "/review" },
-  { icon: PaymentIcon, name: "Payment", path: "/payment" },
-  { icon: WaiterIcon, name: "Call waiter", path: "/waiter" },
-  { icon: ContactIcon, name: "Contact", path: "/contact" },
+  { icon: OrderIcon, name: "Zamówienia", path: "/order" },
+  { icon: ReviewIcon, name: "Opienie", path: "/review" },
+  { icon: PaymentIcon, name: "Płatności", path: "/payment" },
+  { icon: WaiterIcon, name: "Kelner", path: "/waiter" },
+  { icon: ContactIcon, name: "Kontakt", path: "/contact" },
 ];
 
 export const AsideBar: FC = () => {

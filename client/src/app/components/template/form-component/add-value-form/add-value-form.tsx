@@ -1,8 +1,8 @@
-import { ChangeEvent, FC, useState } from 'react';
-import { Button, Input } from 'app/components/common';
+import { ChangeEvent, FC, useState } from "react";
+import { Button, Input } from "app/components/common";
 
-import styles from './add-value-form.module.scss';
-import { useDispatch } from 'react-redux';
+import styles from "./add-value-form.module.scss";
+import { useDispatch } from "react-redux";
 
 interface AddValueFormatProps {
   text: string;
@@ -17,7 +17,7 @@ export const AddValueFormat: FC<AddValueFormatProps> = ({
   action,
   placeholder,
 }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ export const AddValueFormat: FC<AddValueFormatProps> = ({
 
   const handleSubmit = () => {
     dispatch(action(value));
-    setValue('');
+    setValue("");
   };
 
   return (

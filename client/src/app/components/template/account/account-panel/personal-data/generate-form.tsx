@@ -12,6 +12,7 @@ export const GenerateForm = (
       case "text": {
         return (
           <Field
+            key={field.name}
             {...field}
             className={styles.field}
             register={register}
@@ -20,11 +21,21 @@ export const GenerateForm = (
         );
       }
       case "radio": {
-        return <RadioGroupForm {...field} row={true} disabled={!edit} />;
+        return (
+          <RadioGroupForm
+            key={field.name}
+            {...field}
+            row={true}
+            register={register}
+            disabled={!edit}
+            defaultValue={"male"}
+          />
+        );
       }
       case "date": {
         return (
           <Field
+            key={field.name}
             {...field}
             className={styles.date}
             register={register}
@@ -35,6 +46,7 @@ export const GenerateForm = (
       default: {
         return (
           <Field
+            key={field.name}
             {...field}
             className={styles.field}
             register={register}

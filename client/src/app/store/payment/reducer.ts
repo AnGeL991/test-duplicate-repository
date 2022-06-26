@@ -44,9 +44,10 @@ export const PaymentSlice = createSlice({
     addTip: (state, action: PayloadAction<number>) => {
       state.tip = Number(action.payload);
     },
-    addDiscount: (state, action: PayloadAction<number>) => {
-      console.log(action.payload);
-      state.discount = Number(action.payload);
+    addDiscount: (state, action: PayloadAction<string>) => {
+      if (action.payload === "rabat") {
+        state.discount = 100;
+      }
     },
     setPaymentMethod: (state, action: PayloadAction<string>) => {
       state.paymentMethod = action.payload;

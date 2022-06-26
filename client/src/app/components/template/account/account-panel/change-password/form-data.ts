@@ -4,22 +4,22 @@ export const changePasswordFields: changePasswordFormProps[] = [
   {
     type: "password",
     name: "lastPassword",
-    placeholder: "Last Password",
-    label: "Last Password",
+    placeholder: "Aktualne hasło",
+    label: "Aktualne hasło",
     id: "lastPassword",
   },
   {
     type: "password",
     name: "newPassword",
-    placeholder: "New password",
-    label: "New Password",
+    placeholder: "Nowe hasło",
+    label: "Nowe hasło",
     id: "newPassword",
   },
   {
     type: "password",
     name: "confirmPassword",
-    placeholder: "Confirm Password",
-    label: "Confirm Password",
+    placeholder: "Potwierdz hasło",
+    label: "Potwierdz hasło",
     id: "confirmPassword",
   },
 ];

@@ -18,16 +18,16 @@ export const PaymentDish: FC<PaymentDishType> = ({
   return (
     <div className={styles.paymentDish}>
       <div className={styles.imageBox}>
-        <img src={image} alt="test" className={styles.image} />
+        <img src={image} alt={title} className={styles.image} />
       </div>
       <div className={styles.infoBox}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.priceBox}>
-          <span>Price:</span> <strong>${price}</strong>
+          <span>Cena:</span> <strong>${price}</strong>
           <span>Qty:</span> <strong>{amount}</strong>
           <div className={styles.total}>
-            <span>Total</span>
-            <strong>${(Number(price) * amount).toFixed(2)}</strong>
+            <span>Suma</span>
+            <strong>{(Number(price) * amount).toFixed(2)} zł</strong>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "app/components/common";
@@ -6,8 +6,7 @@ import { Dialog, Field } from "app/components/template";
 import { registerSchema } from "app/schema/schema";
 import Logo from "assets/images/logo-big.svg";
 import styles from "./user-register.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "app/store/store";
+import { useDispatch } from "react-redux";
 import {
   toggleModal,
   setMessage,
@@ -75,43 +74,43 @@ export const UserRegister: FC<UserRegisterProps> = ({ open, handleClose }) => {
                 error={errors["email"]}
               />
               <Field
-                label="Name"
+                label="Imię"
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Imię"
                 register={register}
                 className={styles.half}
                 error={errors["name"]}
               />
               <Field
-                label="Surname"
+                label="Nazwisko"
                 type="text"
                 name="surname"
-                placeholder="Surname"
+                placeholder="Nazwisko"
                 register={register}
                 className={styles.half}
                 error={errors["surname"]}
               />
               <Field
-                label="Password"
+                label="Hasło"
                 type="Password"
                 name="password"
-                placeholder="Password"
+                placeholder="Hasło"
                 register={register}
                 error={errors["password"]}
               />
               <Field
-                label="Confirm password"
+                label="Potwierdz hasło"
                 type="password"
                 name="confirmPassword"
-                placeholder="Confirm Password"
+                placeholder="Potwierdz hasło"
                 register={register}
                 error={errors["confirmPassword"]}
               />
             </fieldset>
           </form>
           <Button className={styles.btn} onClick={handleSubmit(onSubmit)}>
-            Create Account
+            Stwórz konto
           </Button>
         </div>
       </div>

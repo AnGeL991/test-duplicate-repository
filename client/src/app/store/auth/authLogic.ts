@@ -15,11 +15,16 @@ export class UserReduxProcess {
   }
   static setToken(state: AuthState, action: PayloadAction<string>) {
     state.token = action.payload;
+    const secializeState = JSON.stringify(action.payload);
+    localStorage.setItem("token", secializeState);
   }
   static setUser(state: AuthState) {
     const authDetail = localStorage.getItem("authDetail");
-    if (authDetail) {
+    const token = localStorage.getItem("token");
+
+    if (authDetail && token) {
       state.user = JSON.parse(authDetail);
+      state.token = JSON.parse(token);
       state.isAuthenticated = true;
     }
   }
@@ -38,5 +43,6 @@ export class UserReduxProcess {
     state.orders = [];
     state.payments = [];
     state.reviews = [];
+    localStorage.removeItem("authDetail");
   }
 }

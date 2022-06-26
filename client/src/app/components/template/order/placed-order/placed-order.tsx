@@ -12,7 +12,6 @@ interface PlacedOrderProps {
 export const PlacedOrder: FC<PlacedOrderProps> = ({
   image,
   name,
-  amount,
   price,
   status,
 }) => {
@@ -29,8 +28,8 @@ export const PlacedOrder: FC<PlacedOrderProps> = ({
             <strong>{status}</strong>
           </div>
           <div className={styles.price}>
-            <span>price</span>
-            <strong>${price}</strong>
+            <span>Cena</span>
+            <strong>{price} zł</strong>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { userLoginYupSchema } from "app/schema/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "app/components/common";
 import { Dialog, Field } from "app/components/template";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   closeLoading,
   setLoading,
@@ -17,7 +17,6 @@ import { setToken, userLoaded, loginSuccess } from "app/store/auth/reducer";
 
 import Logo from "assets/images/logo-big.svg";
 import styles from "./user-login.module.scss";
-import { RootState } from "app/store/store";
 import { client } from "app/api";
 
 interface UserLoginProps {
@@ -83,22 +82,22 @@ export const UserLogin: FC<UserLoginProps> = ({
               error={errors["email"]}
             />
             <Field
-              label="password"
+              label="Hasło"
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="Hasło"
               register={register}
               error={errors["password"]}
             />
           </fieldset>
         </form>
         <Button className={styles.btn} onClick={handleSubmit(onSubmit)}>
-          Log in
+          Zaloguj się
         </Button>
         <div className={styles.info}>
-          Not a member yet?
+          Nie posiadasz jeszcze konta?
           <strong className={styles.join} onClick={handleOpenRegister}>
-            Join Now
+            Dołącz
           </strong>
         </div>
       </div>

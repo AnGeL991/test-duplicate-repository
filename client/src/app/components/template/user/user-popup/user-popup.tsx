@@ -31,16 +31,16 @@ export const UserPopup: FC<UserPopupProps> = ({ active, handleOpenModal }) => {
         Profil
       </li>
       <li className={styles.item} onClick={handleLogOut}>
-        Log out
+        Wyloguj się
       </li>
     </>
   ) : (
     <>
       <li className={styles.item} onClick={() => handleOpenModal("login")}>
-        Sign in
+        Zaloguj się
       </li>
       <li className={styles.item} onClick={() => handleOpenModal("register")}>
-        Sign up
+        Zarejestruj się
       </li>
     </>
   );

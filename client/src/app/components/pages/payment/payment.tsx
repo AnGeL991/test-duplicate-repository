@@ -9,6 +9,9 @@ import {
 } from "app/components/template";
 import { RootState } from "app/store/store";
 import { addDiscount, addTip, preparePayment } from "app/store/payment/reducer";
+import { setInitialState } from "app/store/order/reducer";
+
+import { setStatus, setMessage, toggleModal } from "app/store/panel/reducer";
 import masterCard from "assets/images/mastercard.svg";
 import styles from "./payment.module.scss";
 
@@ -20,49 +23,56 @@ const PaymentPage: FC = () => {
 
   const dispatch = useDispatch();
 
+  const onSubmit = async () => {
+    dispatch(toggleModal(true));
+    dispatch(setStatus("success"));
+    dispatch(setMessage("Dziękujemy za dokonanie płatności "));
+    dispatch(setInitialState());
+  };
+
   dispatch(preparePayment(placedOrders));
 
   return (
     <Container>
-      <PageHeader title="Payment" />
+      <PageHeader title="Płatności" />
       <div className={styles.paymentDetails}>
         <div className={styles.dishBox}>
           <PaymentDishList dishes={dishes} />
           <div className={styles.tipsBox}>
             <AddValueFormat
-              text="I have a discount code:"
-              btn="Add discount"
-              placeholder="discount code"
+              text="Mam kod rabatowy:"
+              btn="Dodaj rabat"
+              placeholder="Kod rabatowy"
               action={addDiscount}
             />
             <AddValueFormat
-              text="Take tips for staff:"
-              btn="Add tips"
-              placeholder="$0"
+              text="Zostaw napiwek"
+              btn="Dodaj napiwek"
+              placeholder="0 zł"
               action={addTip}
             />
           </div>
         </div>
         <div className={styles.totalPayment}>
           <div className={styles.totalPaymentRow}>
-            <span>Payment</span>
-            <strong>${totalPayment.toFixed(2)}</strong>
+            <span>Płatność</span>
+            <strong>{totalPayment.toFixed(2)} zł</strong>
           </div>
           <div className={styles.totalPaymentRow}>
-            <span>Discount</span>
-            <strong>${discount.toFixed(2)}</strong>
+            <span>Kod rabatowy</span>
+            <strong>- {discount.toFixed(2)} zł</strong>
           </div>
           <div className={styles.totalPaymentRow}>
-            <span>Tips</span>
-            <strong>${tip.toFixed(2)}</strong>
+            <span>Napiwek</span>
+            <strong>{tip.toFixed(2)} zł</strong>
           </div>
         </div>
         <div className={styles.border} />
         <div className={styles.paymentBox}>
           <div className={styles.totalPaymentWrapper}>
             <div className={styles.totalPaymentValue}>
-              <span>Total Payment</span>{" "}
-              <strong>${(totalPayment + tip + discount).toFixed(2)}</strong>
+              <span>Suma</span>
+              <strong>{(totalPayment + tip - discount).toFixed(2)} zł</strong>
             </div>
           </div>
           <div className={styles.paymentMethods}>
@@ -88,7 +98,9 @@ const PaymentPage: FC = () => {
           </div>
         </div>
         <footer className={styles.footer}>
-          <Button className={styles.btn}>Confirm Payment</Button>
+          <Button className={styles.btn} onClick={onSubmit}>
+            Potwierdz płatność
+          </Button>
         </footer>
       </div>
     </Container>

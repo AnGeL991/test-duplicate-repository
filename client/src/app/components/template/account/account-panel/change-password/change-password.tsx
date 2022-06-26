@@ -42,11 +42,7 @@ export const ChangePassword: FC<ChangePasswordProps> = ({ id, hidden }) => {
   useEffect(() => {
     if (!loading && send) {
       dispatch(setStatus("success"));
-      dispatch(
-        setMessage(
-          "Zmiana hasła została zakończona powodzeniem"
-        )
-      );
+      dispatch(setMessage("Zmiana hasła została zakończona powodzeniem"));
       dispatch(toggleModal(true));
       reset();
       setSend(false);
@@ -59,6 +55,7 @@ export const ChangePassword: FC<ChangePasswordProps> = ({ id, hidden }) => {
         <fieldset className={styles.fieldset}>
           {changePasswordFields.map((field) => (
             <Field
+              key={field.name}
               {...field}
               className={styles.field}
               register={register}

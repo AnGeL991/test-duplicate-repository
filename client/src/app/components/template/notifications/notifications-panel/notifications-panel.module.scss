@@ -26,3 +26,12 @@
     max-height: 240px;
   }
 }
+
+.empty {
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  text-align: center;
+}

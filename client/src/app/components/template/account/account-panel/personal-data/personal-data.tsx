@@ -1,4 +1,4 @@
-import { FC, useState, useLayoutEffect } from "react";
+import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { Button } from "app/components/common";
@@ -8,32 +8,50 @@ import { PersonalFormData } from "./form-data";
 import { GenerateForm } from "./generate-form";
 import styles from "./personal-data.module.scss";
 import { RootState } from "app/store/store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  closeLoading,
+  setLoading,
+  setMessage,
+  setStatus,
+  toggleModal,
+} from "app/store/panel/reducer";
+import { userLoaded, loginSuccess } from "app/store/auth/reducer";
+import { client } from "app/api";
 
 export const PersonalData: FC<PersonalDataProps> = ({ id, hidden }) => {
   const [editMode, setEditMode] = useState<boolean>(false);
 
-  const { user } = useSelector((state: RootState) => state.auth);
+  const { user, token } = useSelector((state: RootState) => state.auth);
 
   const handleChangeEditMode = () => {
     setEditMode((prev) => !prev);
   };
 
-  const onSubmit = (data: any) => {
+  const dispatch = useDispatch();
+
+  const onSubmit = async (data: any) => {
+    dispatch(setLoading());
+    try {
+      const { result } = await client("users/update", token, data);
+      if (result) {
+        dispatch(userLoaded(result));
+        dispatch(loginSuccess());
+
+        dispatch(closeLoading());
+      }
+    } catch (err: any) {
+      dispatch(closeLoading());
+      dispatch(toggleModal(true));
+      dispatch(setStatus("error"));
+      dispatch(setMessage(err.message));
+    }
     setEditMode(false);
-    console.log(data);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isDirty, isValid },
-    control,
-    reset,
-    watch,
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     reset(user);
   }, [reset, user]);
 

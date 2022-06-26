@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Status = 'error' | 'info' | 'success';
+type Status = "error" | "info" | "success";
 
 interface Notification {
   id: string;
@@ -18,29 +18,14 @@ export interface NotificationState {
 }
 
 export const initialState: NotificationState = {
-  notifications: [
-    {
-      id: '1',
-      status: 'error',
-      time: '5 min ago',
-      message: 'test',
-      readed: false,
-    },
-    {
-      id: '2',
-      status: 'success',
-      time: '5 min ago',
-      message: 'test-2',
-      readed: false,
-    },
-  ],
+  notifications: [],
   unReadedCount: 0,
-  message: '',
+  message: "",
   type: undefined,
 };
 
 export const NotificationSlice = createSlice({
-  name: 'notifications',
+  name: "notifications",
   initialState,
   reducers: {
     setNotifications: (state, action: PayloadAction<NotificationState>) => {
