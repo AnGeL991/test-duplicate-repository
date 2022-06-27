@@ -16,13 +16,17 @@ import {
   setStatus,
   toggleModal,
 } from "app/store/panel/reducer";
-import { userLoaded, loginSuccess } from "app/store/auth/reducer";
+import { loginSuccess, userLoaded } from "app/store/auth/reducer";
 import { client } from "app/api";
 
 export const PersonalData: FC<PersonalDataProps> = ({ id, hidden }) => {
   const [editMode, setEditMode] = useState<boolean>(false);
 
-  const { user, token } = useSelector((state: RootState) => state.auth);
+  const {
+    auth: { user, token },
+  } = useSelector((state: RootState) => state);
+
+  const { register, handleSubmit, reset } = useForm();
 
   const handleChangeEditMode = () => {
     setEditMode((prev) => !prev);
@@ -30,15 +34,17 @@ export const PersonalData: FC<PersonalDataProps> = ({ id, hidden }) => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    reset(user);
+  }, []);
+
   const onSubmit = async (data: any) => {
     dispatch(setLoading());
     try {
       const { result } = await client("users/update", token, data);
       if (result) {
-        dispatch(userLoaded(result));
         dispatch(loginSuccess());
-
-        dispatch(closeLoading());
+        reset(data);
       }
     } catch (err: any) {
       dispatch(closeLoading());
@@ -48,12 +54,6 @@ export const PersonalData: FC<PersonalDataProps> = ({ id, hidden }) => {
     }
     setEditMode(false);
   };
-
-  const { register, handleSubmit, reset } = useForm();
-
-  useEffect(() => {
-    reset(user);
-  }, [reset, user]);
 
   const buttons = !editMode ? (
     <Button className={styles.btn} onClick={handleChangeEditMode}>

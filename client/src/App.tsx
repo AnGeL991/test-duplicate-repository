@@ -15,13 +15,13 @@ import { Routers } from "routers";
 import "./assets/styles/global.scss";
 import "app/theme/theme.scss";
 import { client } from "app/api";
+
 const App: FC = () => {
   const dispatch = useDispatch();
 
   const fetchInventoryData = async () => {
     try {
       const { result } = await client("meal");
-      console.log(result);
       if (result) dispatch(setInventoryData(result));
     } catch (err: any) {}
   };

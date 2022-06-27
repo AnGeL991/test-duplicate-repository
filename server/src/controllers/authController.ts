@@ -78,6 +78,5 @@ export const resetPassword = (req: Request, res: Response) => {
 
 /* User update personal data */
 export const updateData = (req: Request, res: Response) => {
-  console.log(req.body);
   return errorHandler(res, User.updateAccount(res.locals.user._id, { ...req.body }));
 };

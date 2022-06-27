@@ -8,10 +8,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "app/store/store";
 
 export const AccountUser: FC = () => {
-  const { token, isAuthenticated, user } = useSelector(
-    (state: RootState) => state.auth
-  );
-  console.log(token);
+  const { user } = useSelector((state: RootState) => state.auth);
+
   return (
     <Stack direction="row" spacing={4} className={styles.stack}>
       <Avatar className={styles.avatar} />
